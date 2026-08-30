@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <title>CSSLP Flashcards</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="exam.css" />
+</head>
+<body>
+  <!-- Floating menu trigger (domains + theme live inside the drawer) -->
+  <button id="menuBtn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+    <span class="menu-bars" aria-hidden="true"></span>
+  </button>
+
+  <div id="drawer" class="drawer" hidden>
+    <button id="drawerScrim" class="drawer-scrim" type="button" aria-label="Close menu"></button>
+    <div class="drawer-panel" role="dialog" aria-label="Menu">
+      <div class="drawer-head">
+        <span class="brand"><span class="brand-mark" aria-hidden="true"></span>CSSLP</span>
+        <button id="drawerClose" class="icon-btn" type="button" aria-label="Close menu">&times;</button>
+      </div>
+      <p class="drawer-label">Domain</p>
+      <nav id="domainTabs" class="tabs" aria-label="Domains"></nav>
+      <button class="exam-launch block" data-exam-launch type="button">Practice exams</button>
+      <div class="drawer-row">
+        <span class="drawer-label">Theme</span>
+        <button id="themeToggle" class="theme-btn" type="button" aria-label="Switch theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span id="themeLabel">System</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="stage">
+    <div class="card-wrap">
+      <button id="card" class="card" type="button" aria-live="polite">
+        <div class="card-inner">
+          <div class="face face-front">
+            <span class="face-label">Question</span>
+            <p id="frontText" class="q-text"></p>
+            <span class="flip-hint">Tap to reveal</span>
+          </div>
+          <div class="face face-back">
+            <span class="face-label">Answer</span>
+            <p id="backText" class="a-text"></p>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <aside class="side">
+      <p id="domainName" class="domain-name"></p>
+      <span id="counter" class="counter">1 / 1</span>
+
+      <div class="playbar">
+        <button id="prevBtn" class="nav-btn" type="button" aria-label="Previous card">&larr;</button>
+        <button id="speakBtn" class="speak-btn" type="button" aria-label="Play question">
+          <span class="speak-icon" aria-hidden="true"></span>
+        </button>
+        <button id="nextBtn" class="nav-btn" type="button" aria-label="Next card">&rarr;</button>
+      </div>
+
+      <div class="meta-toggles">
+        <button id="shuffleBtn" class="toggle-btn" type="button" aria-pressed="false">Shuffle</button>
+        <button id="autoBtn" class="toggle-btn" type="button" aria-pressed="false">Autoplay</button>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+    </aside>
+  </main>
+
+  <div id="examRoot" class="exam-root" hidden></div>
+
+  <script src="app.js"></script>
+  <script src="exam.js"></script>
+</body>
+</html>

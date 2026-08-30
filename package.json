@@ -1,0 +1,43 @@
+{
+  "name": "csslp-flashcards",
+  "version": "1.1.0",
+  "description": "A focused, offline-capable study app for the ISC2 CSSLP exam: flip cards with narrated audio, plus domain quizzes and a timed mock exam. No accounts, no tracking, no build step.",
+  "main": "app.js",
+  "scripts": {
+    "sync": "node scripts/sync-assets.mjs",
+    "start": "python -m http.server 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-van-den-Boomen/csslp-flashcards.git"
+  },
+  "keywords": [
+    "csslp",
+    "isc2",
+    "flashcards",
+    "study",
+    "exam-prep",
+    "mock-exam",
+    "secure-software",
+    "application-security",
+    "pwa",
+    "offline",
+    "capacitor",
+    "android"
+  ],
+  "author": "H-van-den-Boomen",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/H-van-den-Boomen/csslp-flashcards/issues"
+  },
+  "homepage": "https://github.com/H-van-den-Boomen/csslp-flashcards#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/core": "^8.4.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.2"
+  }
+}

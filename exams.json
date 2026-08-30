@@ -1,0 +1,904 @@
+{
+  "generated": "2026-08-24",
+  "passMark": 0.7,
+  "quiz": { "count": 10 },
+  "mock": { "count": 100, "minutes": 150 },
+  "domains": [
+    {
+      "id": "d1",
+      "num": 1,
+      "name": "Secure Software Concepts",
+      "pool": [
+        {
+          "q": "An auditor asks the team to prove that a specific engineer, and no one else, approved a production release last month. The team points to signed release records tied to that engineer's identity. Which security property does this MOST directly support?",
+          "options": ["Confidentiality", "Availability", "Non-repudiation", "Fault tolerance"],
+          "correct": [2],
+          "explanation": "Non-repudiation means an actor cannot credibly deny an action they performed. A record cryptographically bound to a unique identity provides that proof. Confidentiality and availability are unrelated to attributing an action, and fault tolerance is a resilience property.",
+          "tip": "\"Cannot deny having done it\" plus a signed, identity-bound record almost always points to non-repudiation."
+        },
+        {
+          "q": "A payroll service must keep running even if one data-center loses power. The team adds a second region with automatic failover. Which element of the CIA triad is this design PRIMARILY protecting?",
+          "options": ["Confidentiality", "Integrity", "Availability", "Non-repudiation"],
+          "correct": [2],
+          "explanation": "Redundancy and automatic failover keep the service reachable when a component fails, which is the definition of availability. It does not by itself protect against disclosure (confidentiality) or unauthorized modification (integrity).",
+          "tip": "Redundancy, failover, and backups are availability controls."
+        },
+        {
+          "q": "A developer proposes storing test data by copying the production customer database and changing names and card numbers to realistic but fake values, keeping the same format so the app still works. The originals cannot be recovered from the test copy. Which technique is described?",
+          "options": ["Tokenization with a secure vault", "Anonymization", "Masking (obfuscation)", "Full-disk encryption"],
+          "correct": [2],
+          "explanation": "Masking/obfuscation replaces sensitive values with realistic, format-preserving substitutes so non-production systems stay usable without exposing real data. Tokenization keeps a reversible mapping in a vault, and full-disk encryption protects data at rest without changing the values.",
+          "tip": "Format-preserving fake data for dev/test = masking; a reversible vault mapping = tokenization."
+        },
+        {
+          "q": "Which access control model enforces \"no read up, no write down\" using fixed labels the system assigns to both subjects and objects?",
+          "options": ["Discretionary access control (DAC)", "Role-based access control (RBAC)", "Mandatory access control (MAC)", "Attribute-based access control (ABAC)"],
+          "correct": [2],
+          "explanation": "MAC uses system-enforced labels and clearances; the Bell-LaPadula confidentiality rules (no read up, no write down) are classically implemented with MAC. DAC lets owners decide, RBAC bundles permissions into job roles, and ABAC evaluates attributes.",
+          "tip": "Fixed labels + clearances + no-read-up/no-write-down = MAC (Bell-LaPadula)."
+        },
+        {
+          "q": "A bank requires that issuing a large wire transfer needs one employee to initiate it and a different employee to approve it. Which principle does this BEST illustrate?",
+          "options": ["Least privilege", "Separation of duties", "Defense in depth", "Complete mediation"],
+          "correct": [1],
+          "explanation": "Separation of duties splits a sensitive task across two or more people so no single individual can complete it alone, reducing fraud risk. Least privilege limits how much access one person has; defense in depth is layered controls; complete mediation is checking every access.",
+          "tip": "Two different people required to finish one sensitive action = separation of duties."
+        },
+        {
+          "q": "During design review, a component is set so that if its authorization check throws an error, the request is denied rather than allowed through. Which principle is being applied?",
+          "options": ["Fail-safe defaults (fail secure)", "Economy of mechanism", "Open design", "Psychological acceptability"],
+          "correct": [0],
+          "explanation": "Fail-safe defaults mean the system denies by default and denies on failure, so an error results in no access rather than accidental access.",
+          "tip": "\"On error/by default, deny\" = fail-safe defaults / fail secure."
+        },
+        {
+          "q": "A team consolidates many custom login flows onto one well-vetted single sign-on service so the design is small and simple enough to review and verify. Which principle drives this choice?",
+          "options": ["Least common mechanism", "Economy of mechanism", "Defense in depth", "Separation of duties"],
+          "correct": [1],
+          "explanation": "Economy of mechanism favors simple, minimal designs that are easier to analyze and secure; consolidating to one vetted SSO reduces components and attack surface. Least common mechanism is about not sharing mechanisms between users.",
+          "tip": "Keywords \"simple\" and \"minimal components\" point to economy of mechanism."
+        },
+        {
+          "q": "A reviewer argues that a cryptographic protocol should remain secure even if its full design is published, with only the keys kept secret. Which principle is the reviewer invoking?",
+          "options": ["Security through obscurity", "Open design", "Least privilege", "Complete mediation"],
+          "correct": [1],
+          "explanation": "Open design (Kerckhoffs's principle) holds that security must not depend on secrecy of the design, only on secrecy of keys. Security through obscurity is the opposite and is weak on its own.",
+          "tip": "\"Secure even if the design is public\" = open design."
+        },
+        {
+          "q": "A threat has a single loss expectancy (SLE) of $40,000 and is expected to occur about twice per year. What is the annualized loss expectancy (ALE)?",
+          "options": ["$20,000", "$40,000", "$80,000", "$160,000"],
+          "correct": [2],
+          "explanation": "ALE = SLE x ARO. With SLE = $40,000 and ARO = 2, ALE = $80,000. This figure helps justify spending on a control.",
+          "tip": "SLE = AV x EF and ALE = SLE x ARO."
+        },
+        {
+          "q": "After applying controls, management reviews the risk that still remains and formally accepts it. What is this remaining risk called?",
+          "options": ["Inherent risk", "Residual risk", "Transferred risk", "Total risk"],
+          "correct": [1],
+          "explanation": "Residual risk is what remains after controls are applied and is what management formally accepts. Inherent risk is before controls; transferred risk is shifted to another party.",
+          "tip": "Before controls = inherent; after controls = residual."
+        },
+        {
+          "q": "A startup buys cyber-insurance to cover breach losses while keeping the risky service running. Select every statement that is TRUE about risk responses.",
+          "options": ["Buying insurance is risk transfer", "Shutting the service down would be risk avoidance", "Adding controls to reduce likelihood would be risk mitigation", "Buying insurance is risk avoidance"],
+          "correct": [0, 1, 2],
+          "explanation": "Insurance shifts financial impact to a third party (transfer, not avoidance). Stopping the risky activity is avoidance, and applying controls is mitigation. Acceptance (not listed) means knowingly taking no action.",
+          "tip": "The four responses: avoid, mitigate, transfer, accept. Insurance is the classic transfer."
+        },
+        {
+          "q": "In a governance hierarchy, which document is the high-level, mandatory statement of management intent that standards, procedures, and guidelines support?",
+          "options": ["Standard", "Procedure", "Policy", "Guideline"],
+          "correct": [2],
+          "explanation": "A policy is the top-level mandatory statement of intent. Standards specify mandatory specifics, procedures give step-by-step instructions, and guidelines are recommended, not mandatory.",
+          "tip": "Policy = high-level mandatory; standard = specific rules; procedure = steps; guideline = optional."
+        },
+        {
+          "q": "A hospital system must ensure that clinical staff cannot copy data from a lower-trust source into a higher-integrity patient record. Which formal model addresses this with \"no read down, no write up\"?",
+          "options": ["Bell-LaPadula", "Biba", "Clark-Wilson", "Brewer-Nash"],
+          "correct": [1],
+          "explanation": "Biba is the integrity counterpart to Bell-LaPadula. Its simple integrity property forbids reading lower-integrity data and its star property forbids writing to higher-integrity objects, preventing contamination upward. Bell-LaPadula protects confidentiality, Clark-Wilson enforces integrity through well-formed transactions and separation of duties, and Brewer-Nash (Chinese Wall) prevents conflict-of-interest access.",
+          "tip": "Bell-LaPadula = confidentiality (no read up). Biba = integrity (no read down). The two are mirror images."
+        },
+        {
+          "q": "An application must grant access based on the combination of a user's department, the record's sensitivity label, the time of day, and the device's compliance state. Which access control model handles this MOST naturally?",
+          "options": ["Role-based access control (RBAC)", "Attribute-based access control (ABAC)", "Discretionary access control (DAC)", "Mandatory access control (MAC)"],
+          "correct": [1],
+          "explanation": "ABAC evaluates policies over attributes of the subject, the resource, the action, and the environment, which is exactly what a multi-factor contextual rule needs. RBAC would require an unmanageable explosion of roles to encode the same combinations, DAC leaves decisions to resource owners, and MAC relies on fixed system-assigned labels rather than dynamic context.",
+          "tip": "When the rule mentions context such as time, location, or device posture, think ABAC rather than RBAC."
+        },
+        {
+          "q": "A design places input validation at the edge, authorization in the service, encryption in the datastore, and monitoring across all three, so that no single failure exposes data. Which principle is being applied?",
+          "options": ["Defense in depth", "Economy of mechanism", "Open design", "Single point of accountability"],
+          "correct": [0],
+          "explanation": "Defense in depth layers independent controls so that the compromise of any one of them still leaves others standing. Economy of mechanism argues for keeping designs small and simple, open design says security must not depend on secrecy of the design, and the last option is not a recognized security design principle.",
+          "tip": "Multiple independent layers covering the same asset is always defense in depth."
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "num": 2,
+      "name": "Secure Software Lifecycle Management",
+      "pool": [
+        {
+          "q": "A team keeps finding expensive security flaws just before release. A consultant recommends addressing security starting in requirements and design instead. What is this practice commonly called?",
+          "options": ["Shift left", "Continuous deployment", "Blue-green release", "Canary testing"],
+          "correct": [0],
+          "explanation": "Shifting left means moving security activities earlier in the lifecycle, where defects are far cheaper to fix than in production. The other options are deployment or release techniques, not a security-timing practice.",
+          "tip": "\"Earlier in the lifecycle\" = shift left."
+        },
+        {
+          "q": "An organization wants a defined point in the pipeline that a release cannot pass until its threat model is approved and no critical findings remain open. What is this control called?",
+          "options": ["A retrospective", "A security gate", "A sprint review", "A postmortem"],
+          "correct": [1],
+          "explanation": "A security gate is a checkpoint with pass/fail criteria that a project cannot proceed past until met. Retrospectives, sprint reviews, and postmortems are meetings, not enforcement gates.",
+          "tip": "\"Cannot proceed until security criteria are met\" = a gate."
+        },
+        {
+          "q": "A company agrees in advance that any defect at \"high\" severity or above must be fixed before shipping, so deadline pressure can't quietly waive it. What is this threshold called?",
+          "options": ["A service level agreement", "A bug bar", "A definition of done", "A change request"],
+          "correct": [1],
+          "explanation": "A bug bar is a pre-agreed severity threshold above which defects must be fixed before release, preventing ad-hoc risk acceptance under pressure. A definition of done is broader and not specifically a severity cutoff.",
+          "tip": "Pre-set \"must fix above this severity\" line = bug bar."
+        },
+        {
+          "q": "How does security typically integrate into an Agile process, as opposed to Waterfall?",
+          "options": ["Security is a single phase after coding", "Security requirements are frozen up front and never revisited", "Security work is built into the definition of done and per-sprint activities", "Security is handled only by an external audit at the end"],
+          "correct": [2],
+          "explanation": "Agile embeds security into each iteration: security user stories, per-sprint threat modeling, and acceptance criteria in the definition of done. Freezing requirements up front and single end-phase security describe Waterfall-style or after-the-fact approaches.",
+          "tip": "Agile = security woven into every sprint and the definition of done."
+        },
+        {
+          "q": "Compare OWASP SAMM and BSIMM. Which statement is accurate?",
+          "options": ["Both are prescriptive step-by-step coding standards", "SAMM is prescriptive/self-assessed while BSIMM is descriptive (measures what real organizations do)", "BSIMM is a static analysis tool", "SAMM only applies to hardware"],
+          "correct": [1],
+          "explanation": "Both are software-security maturity models. SAMM is prescriptive and self-assessed; BSIMM is descriptive, reporting what a community of real organizations actually does. Neither is a coding standard or a tool.",
+          "tip": "SAMM = prescriptive model; BSIMM = descriptive observed data."
+        },
+        {
+          "q": "Developers embedded in each product team who receive extra security training and act as the security team's local presence are known as:",
+          "options": ["Penetration testers", "Security champions", "Incident responders", "Auditors"],
+          "correct": [1],
+          "explanation": "Security champions scale scarce security expertise by embedding trained advocates within development teams. The other roles are specialized functions, not an in-team scaling model.",
+          "tip": "In-team trained security advocates = security champions."
+        },
+        {
+          "q": "Why is configuration management (version control, baselines, controlled change) considered a security practice, not just an operational one?",
+          "options": ["It guarantees zero downtime", "It makes every change traceable and prevents uncontrolled drift that introduces vulnerabilities", "It replaces the need for testing", "It encrypts all data at rest"],
+          "correct": [1],
+          "explanation": "Uncontrolled change is a leading cause of outages and vulnerabilities; configuration management provides traceability (who/what/when/why) and baselines so changes are reviewed and reversible. It does not replace testing or encryption.",
+          "tip": "Traceable, controlled change = fewer surprise vulnerabilities."
+        },
+        {
+          "q": "A team is decommissioning a legacy application. Which action is essential to do securely as part of retirement?",
+          "options": ["Leave the credentials active in case of rollback", "Revoke credentials/keys, sanitize or destroy media, and update the asset inventory", "Keep all data indefinitely for convenience", "Simply power off the server and move on"],
+          "correct": [1],
+          "explanation": "Secure decommissioning revokes access and keys, handles data per retention rules, sanitizes or destroys media, and updates documentation and inventory. Leaving credentials active or keeping data indefinitely creates lingering risk; powering off alone is not enough.",
+          "tip": "Decommissioning = revoke access/keys, sanitize media, update inventory."
+        },
+        {
+          "q": "A dataset must be disposed of so that even a well-resourced lab cannot recover it, but the drives will be reused internally. Which media sanitization level fits BEST?",
+          "options": ["Clear (logical overwrite)", "Purge (cryptographic erase or degauss)", "Destroy (physical shredding)", "Archive"],
+          "correct": [1],
+          "explanation": "Purge (cryptographic erase or degauss) protects against laboratory recovery while allowing reuse. Clear only defeats simple recovery, and destroy prevents reuse entirely. Archive is not sanitization.",
+          "tip": "Reuse + lab-grade protection = purge; no reuse = destroy."
+        },
+        {
+          "q": "A customer wants assurance they can still maintain critical software if the vendor goes out of business. Which contractual arrangement addresses this?",
+          "options": ["Software escrow", "A service level agreement", "A non-disclosure agreement", "A bug bounty"],
+          "correct": [0],
+          "explanation": "Software escrow places source code with a neutral third party, released to the customer if the vendor fails, providing supply-chain continuity. SLAs govern performance, NDAs govern confidentiality, and bug bounties reward vulnerability reports.",
+          "tip": "\"Get the source if the vendor disappears\" = escrow."
+        },
+        {
+          "q": "Which of the following is the BEST example of a security metric that drives improvement rather than just reporting activity?",
+          "options": ["Number of meetings held", "Mean time to remediate (MTTR) a vulnerability, tracked over time", "Lines of code written", "Number of developers on staff"],
+          "correct": [1],
+          "explanation": "MTTR to remediate vulnerabilities measures how quickly risk is reduced and can drive process changes. Meeting counts, lines of code, and headcount are activity or size measures, not security-outcome metrics.",
+          "tip": "Good metrics tie to risk reduction and drive decisions."
+        },
+        {
+          "q": "What is the role of a change control board (CCB) in secure lifecycle management?",
+          "options": ["To write all application code", "To review and approve significant changes, weighing security impact before deployment", "To perform penetration tests", "To manage employee payroll"],
+          "correct": [1],
+          "explanation": "A CCB reviews and authorizes significant changes, assessing security and operational impact before they go live. It is a governance function, not a coding, testing, or HR role.",
+          "tip": "CCB = approves changes with security impact in mind."
+        },
+        {
+          "q": "An organization wants a vendor-neutral set of fundamental secure development practices it can map its existing SDLC against, published by NIST. Which framework fits?",
+          "options": ["NIST SSDF (SP 800-218)", "ISO 9001", "COBIT", "ITIL"],
+          "correct": [0],
+          "explanation": "The Secure Software Development Framework, NIST SP 800-218, describes outcome-oriented secure development practices grouped as Prepare the Organization, Protect the Software, Produce Well-Secured Software, and Respond to Vulnerabilities, deliberately written to overlay any lifecycle model. ISO 9001 covers general quality management, COBIT covers IT governance, and ITIL covers service management.",
+          "tip": "SSDF is the NIST secure-development overlay; it prescribes practices and outcomes, not a specific lifecycle."
+        },
+        {
+          "q": "A developer writes code, approves their own merge request, and pushes the build straight to production. Which lifecycle control is missing, and why does it matter?",
+          "options": ["Separation of duties, because one person can introduce and release a change with no independent review", "Data classification, because production data has not been labeled", "Threat modeling, because the design was never diagrammed", "Regression testing, because existing behavior is unverified"],
+          "correct": [0],
+          "explanation": "Allowing a single identity to author, approve, and deploy removes every independent check and creates both a fraud path and an unreviewed-defect path. Splitting authorship from approval and from deployment authority is the classic control. The other items are worthwhile practices but none of them addresses the concentration of authority described here.",
+          "tip": "One person completing an entire sensitive workflow end to end is a separation of duties gap."
+        },
+        {
+          "q": "A framework the product depends on will stop receiving security patches in nine months. What is the CORRECT lifecycle response?",
+          "options": ["Plan and budget a migration now, tracking the end-of-support date as a managed risk with an owner and a deadline", "Wait until an exploitable vulnerability is published, then react", "Keep the version and rely on a web application firewall indefinitely", "Fork the framework and maintain it in-house as the default first choice"],
+          "correct": [0],
+          "explanation": "End-of-support dates are known in advance, which makes them plannable rather than reactive. Treating the date as a tracked risk with an owner, a migration plan, and budget is the disciplined response. Waiting for an exploit guarantees emergency work under pressure, a WAF is compensating and partial, and forking transfers the entire maintenance burden and should be a last resort.",
+          "tip": "EOL dates are calendar items, not surprises. Plan the migration before support ends."
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "num": 3,
+      "name": "Secure Software Requirements",
+      "pool": [
+        {
+          "q": "\"All stored passwords must be hashed with a memory-hard algorithm\" is BEST classified as which kind of requirement?",
+          "options": ["Functional security requirement", "Non-functional security requirement", "Business use case", "Acceptance test script"],
+          "correct": [1],
+          "explanation": "Non-functional security requirements express qualities and constraints (how the system must be), such as how credentials are protected. A functional requirement describes a behavior the system performs, like \"lock the account after 5 failed logins.\"",
+          "tip": "Quality/constraint = non-functional; a specific behavior/action = functional."
+        },
+        {
+          "q": "A team writes: \"As an attacker, I want to reuse a stolen session token so I can impersonate a user.\" What is the purpose of writing this?",
+          "options": ["It is a marketing persona", "It is a misuse/abuse case that surfaces mitigating security requirements", "It is a deployment runbook", "It is a performance benchmark"],
+          "correct": [1],
+          "explanation": "Misuse/abuse cases describe how a hostile actor would attack the system, which drives out the security requirements that prevent them (here, token expiry and rotation). They are not marketing, ops, or performance artifacts.",
+          "tip": "Attacker-perspective scenario = misuse/abuse case; each should map to a mitigating requirement."
+        },
+        {
+          "q": "Which requirement focuses on assigning sensitivity levels to information and evaluating the impact if it is exposed?",
+          "options": ["Data ownership", "Data classification", "Data anonymization", "Data replication"],
+          "correct": [1],
+          "explanation": "Data classification assigns sensitivity labels and drives handling requirements (encryption, access, retention). Ownership is about accountability, anonymization is a protection technique, and replication is availability.",
+          "tip": "\"Sensitivity level\" and \"impact if exposed\" = classification."
+        },
+        {
+          "q": "In privacy terms, who decides the purpose and means of processing personal data, versus who merely acts on instructions?",
+          "options": ["Custodian decides; owner acts", "Data controller decides; data processor acts on instructions", "Auditor decides; steward acts", "Processor decides; controller acts"],
+          "correct": [1],
+          "explanation": "Under GDPR-style roles, the data controller determines the purpose and means of processing, while the data processor acts on the controller's instructions. The other pairings misstate these roles.",
+          "tip": "Controller = decides why/how; processor = follows instructions."
+        },
+        {
+          "q": "A design collects only the personal data actually needed for the stated purpose and nothing more. Which privacy principle is this?",
+          "options": ["Purpose limitation", "Data minimization", "Storage limitation", "Portability"],
+          "correct": [1],
+          "explanation": "Data minimization means collecting only what is necessary for the purpose. Purpose limitation restricts use to the stated purpose, storage limitation restricts how long data is kept, and portability is a data-subject right.",
+          "tip": "\"Collect only what's needed\" = minimization."
+        },
+        {
+          "q": "A high-risk processing activity is planned for a new health platform. Which assessment is specifically intended to identify and mitigate privacy risks before processing begins?",
+          "options": ["Business impact analysis (BIA)", "Data protection impact assessment (DPIA)", "Penetration test", "Disaster recovery test"],
+          "correct": [1],
+          "explanation": "A DPIA is required for high-risk processing to identify and mitigate privacy risks up front. A BIA addresses availability/continuity impact, and the other options are security or resilience tests.",
+          "tip": "Privacy risk, high-risk processing, done up front = DPIA."
+        },
+        {
+          "q": "Which compliance framework is written specifically for organizations that store, process, or transmit payment card data?",
+          "options": ["ISO 27001", "PCI DSS", "SOX", "HIPAA"],
+          "correct": [1],
+          "explanation": "PCI DSS is purpose-built for cardholder data security. ISO 27001 is a general ISMS framework, SOX covers financial reporting integrity, and HIPAA covers US health information.",
+          "tip": "Credit/debit card handling = PCI DSS."
+        },
+        {
+          "q": "What is the purpose of a requirements traceability matrix (RTM) for security?",
+          "options": ["To store user passwords", "To map each security requirement through design, implementation, and test so nothing is missed", "To monitor production servers", "To generate marketing reports"],
+          "correct": [1],
+          "explanation": "An RTM links each requirement to its design, code, and tests, proving every security requirement was implemented and verified (and every control traces back to a requirement). It is not a runtime or reporting tool.",
+          "tip": "RTM proves each requirement was built AND tested."
+        },
+        {
+          "q": "Pseudonymization differs from anonymization in which key way?",
+          "options": ["Pseudonymization is irreversible; anonymization is reversible", "Pseudonymized data can be re-linked with a separately held key and remains personal data; true anonymization is irreversible", "They are identical", "Anonymization always keeps names intact"],
+          "correct": [1],
+          "explanation": "Pseudonymization replaces identifiers but keeps a separate key that can re-link the data, so it is still personal data. True anonymization is irreversible and, if genuinely irreversible, is no longer personal data.",
+          "tip": "Re-linkable with a key = pseudonymization (still personal data)."
+        },
+        {
+          "q": "Which statement BEST describes the role of non-functional requirements in software behavior?",
+          "options": ["They define which specific features to build", "They define quality attributes such as performance, scalability, security, usability, and maintainability", "They are the deployment runbooks", "They list the project's staff"],
+          "correct": [1],
+          "explanation": "Non-functional requirements capture quality attributes and constraints that govern how the system behaves, setting measurable targets for architecture and testing. Features are functional requirements; runbooks and staffing are operational artifacts.",
+          "tip": "Qualities/measurable targets = non-functional requirements."
+        },
+        {
+          "q": "Which requirements should security requirements be traceable to and validated against? (Choose 2)",
+          "options": ["Acceptance criteria / security test cases", "The developer's personal preferences", "Applicable laws, regulations, and data classification", "The marketing budget"],
+          "correct": [0, 2],
+          "explanation": "Security requirements derive from sources like laws, regulations, and data classification, and must be validated against acceptance criteria and security test cases. Personal preference and budget are not sources of security requirements or validation.",
+          "tip": "Requirements trace up to drivers (law, classification) and down to tests."
+        },
+        {
+          "q": "Privacy by default means that when a user first uses a product, the initial settings should be:",
+          "options": ["The most feature-rich regardless of privacy", "The most privacy-protective, with sharing off unless the user opts in", "Whatever maximizes data collection", "Chosen randomly"],
+          "correct": [1],
+          "explanation": "Privacy by default requires shipping with the most privacy-protective settings so users are protected without having to configure anything. Maximizing collection or features by default is the opposite.",
+          "tip": "Default settings should protect privacy, not maximize data."
+        },
+        {
+          "q": "A regulator requires that citizens' personal data be stored and processed only on infrastructure physically located inside the country. Which requirement category is this?",
+          "options": ["Data residency and sovereignty", "Data minimization", "Purpose limitation", "Storage encryption strength"],
+          "correct": [0],
+          "explanation": "Data residency governs where data physically lives, and sovereignty adds that the data is subject to the laws of that jurisdiction. It constrains region selection, backup destinations, and support access paths. Minimization limits how much data is collected, purpose limitation restricts what it may be used for, and encryption strength is a separate control requirement.",
+          "tip": "\"Must stay inside the country's borders\" is residency and sovereignty, not minimization."
+        },
+        {
+          "q": "A privacy regulation gives individuals the right to obtain a copy of their personal data and to have it deleted. What must the requirements specify for the system to satisfy this?",
+          "options": ["The ability to locate, export, and delete all copies of one individual's data, including backups and derived stores, within a defined time limit", "Only that a privacy policy is published on the website", "Only that the primary database row can be marked inactive", "Only that support staff can read the record on request"],
+          "correct": [0],
+          "explanation": "Data subject access and erasure rights are engineering requirements, not just policy statements. Satisfying them means the system can find every copy of an individual's data across primary stores, caches, analytics extracts, logs, and backups, then export or remove it within the statutory deadline. Soft-deleting a single row leaves copies behind and does not meet the obligation.",
+          "tip": "Erasure requirements bite hardest on backups, logs, and analytics copies, so capture them in the requirement."
+        },
+        {
+          "q": "Which requirement is essential so that a later investigation can reconstruct who did what to a sensitive record and when?",
+          "options": ["Tamper-evident audit logging of security-relevant events with reliable identity and timestamps", "Verbose debug logging enabled in production", "Longer session timeouts for administrators", "Storing the full request body of every transaction indefinitely"],
+          "correct": [0],
+          "explanation": "Accountability requires that security-relevant events be recorded with a trustworthy actor identity, an accurate synchronized timestamp, and protection against alteration, and that the records be retained long enough to be useful. Verbose debug output is noisy and often leaks sensitive values, longer admin sessions weaken security, and storing every full request body indefinitely creates a large new confidentiality liability.",
+          "tip": "Auditability requirements are about who, what, when, and tamper evidence, not log volume."
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "num": 4,
+      "name": "Secure Software Architecture and Design",
+      "pool": [
+        {
+          "q": "During threat modeling, a team draws a data flow diagram and pays special attention to the points where the level of trust changes, such as internet-to-web-tier. What are these points called?",
+          "options": ["Data stores", "Trust boundaries", "External entities", "Sequence diagrams"],
+          "correct": [1],
+          "explanation": "Trust boundaries are where trust level changes, and threats cluster there, so validation must happen at each crossing. Data stores and external entities are other DFD elements; a sequence diagram is a different model.",
+          "tip": "Where trust changes = trust boundary; validate at every crossing."
+        },
+        {
+          "q": "In STRIDE, which threat category corresponds to a violation of integrity?",
+          "options": ["Spoofing", "Tampering", "Repudiation", "Denial of service"],
+          "correct": [1],
+          "explanation": "In STRIDE, Tampering violates integrity. Spoofing violates authentication, Repudiation violates non-repudiation, and Denial of service violates availability.",
+          "tip": "STRIDE: Spoofing/auth, Tampering/integrity, Repudiation/non-rep, Info disclosure/confidentiality, DoS/availability, Elevation/authorization."
+        },
+        {
+          "q": "Which threat modeling methodology is a seven-stage, risk-centric process that aligns business objectives with technical threats?",
+          "options": ["STRIDE", "PASTA", "DREAD", "Attack tree"],
+          "correct": [1],
+          "explanation": "PASTA (Process for Attack Simulation and Threat Analysis) is a seven-stage, risk-centric methodology. STRIDE is a threat categorization, DREAD is a scoring model, and an attack tree enumerates attack paths.",
+          "tip": "Seven-stage, risk-centric, business-aligned = PASTA."
+        },
+        {
+          "q": "How must user passwords be stored so that a database breach does not immediately expose them?",
+          "options": ["Encrypted with a symmetric key stored beside them", "Hashed with a slow, salted, memory-hard algorithm such as bcrypt, scrypt, or Argon2", "Base64-encoded", "In plaintext but behind a firewall"],
+          "correct": [1],
+          "explanation": "Passwords should be hashed (not encrypted) with a slow, salted, memory-hard function so cracking is expensive and rainbow tables are defeated. Encryption with a nearby key, encoding, and plaintext all leave them recoverable.",
+          "tip": "Passwords are hashed (bcrypt/scrypt/Argon2 + unique salt), never encrypted."
+        },
+        {
+          "q": "Why does TLS use both asymmetric and symmetric cryptography?",
+          "options": ["Asymmetric is used for bulk data because it is fastest", "Asymmetric establishes/exchanges a symmetric session key, then fast symmetric encryption protects the bulk traffic", "Symmetric is used only for signatures", "It uses hashing instead of encryption"],
+          "correct": [1],
+          "explanation": "Asymmetric cryptography is used to securely exchange a symmetric session key (it is too slow for bulk data); symmetric encryption then protects the actual traffic efficiently. This hybrid gets the strengths of both.",
+          "tip": "Asymmetric for key exchange/signatures; symmetric for bulk data."
+        },
+        {
+          "q": "What does a digital signature provide, and how is it produced?",
+          "options": ["Confidentiality, by encrypting the whole message with a symmetric key", "Integrity, authenticity, and non-repudiation, by hashing the message and encrypting the hash with the sender's private key", "Availability, by replicating the message", "Only compression of the message"],
+          "correct": [1],
+          "explanation": "A digital signature hashes the message and encrypts the hash with the sender's private key, giving integrity, authenticity, and non-repudiation. It is verified with the sender's public key. It does not by itself provide confidentiality.",
+          "tip": "Sign = hash then encrypt hash with the private key; provides integrity + authenticity + non-repudiation."
+        },
+        {
+          "q": "In the cloud shared responsibility model, which items ALWAYS remain the customer's responsibility regardless of service model?",
+          "options": ["The physical data center security", "The customer's own data, identity/access management, and configuration", "The hypervisor patching", "The provider's network backbone"],
+          "correct": [1],
+          "explanation": "The customer is always responsible for their data, IAM, and configuration; the provider secures the underlying infrastructure. Misconfigured storage buckets are the classic customer-side failure.",
+          "tip": "Data, identity, and configuration are always yours in the cloud."
+        },
+        {
+          "q": "Which design principle favors minimizing components shared between different users or processes to avoid unintended information paths?",
+          "options": ["Economy of mechanism", "Least common mechanism", "Open design", "Defense in depth"],
+          "correct": [1],
+          "explanation": "Least common mechanism reduces mechanisms shared among users/processes to prevent covert or unintended interactions. Economy of mechanism is about overall simplicity, which is related but distinct.",
+          "tip": "\"Don't share mechanisms between users\" = least common mechanism."
+        },
+        {
+          "q": "A team wants recorded TLS traffic to stay safe even if the server's long-term private key is later stolen. Which property should the design provide?",
+          "options": ["Perfect forward secrecy (ephemeral session keys)", "Longer RSA keys only", "Disabling certificate validation", "Client-side caching"],
+          "correct": [0],
+          "explanation": "Perfect forward secrecy uses ephemeral per-session keys so a future compromise of the long-term key cannot decrypt previously recorded sessions. Larger keys alone don't provide this, and disabling validation is harmful.",
+          "tip": "Past traffic safe after key theft = perfect forward secrecy."
+        },
+        {
+          "q": "Which practice reduces a system's attack surface?",
+          "options": ["Enabling every optional feature by default", "Disabling unused services, closing unnecessary ports, and removing default accounts", "Adding more third-party libraries", "Granting all users admin access"],
+          "correct": [1],
+          "explanation": "Attack surface reduction removes or restricts entry points: unused services, open ports, and default accounts. Enabling everything, adding libraries, and broad admin access all enlarge the attack surface.",
+          "tip": "Fewer exposed features/ports/accounts = smaller attack surface."
+        },
+        {
+          "q": "Which two are appropriate uses of hashing (as opposed to encryption)? (Choose 2)",
+          "options": ["Verifying file integrity with a digest", "Providing a keyed integrity+authenticity check via HMAC", "Reversibly protecting data so it can be decrypted later", "Exchanging a session key"],
+          "correct": [0, 1],
+          "explanation": "Hashing produces a one-way digest for integrity verification, and HMAC adds a key for integrity plus authenticity. Reversible protection and key exchange are jobs for encryption, not hashing.",
+          "tip": "Hashing is one-way (integrity); encryption is reversible (confidentiality)."
+        },
+        {
+          "q": "A microservices architecture is chosen. Which is a genuine security implication to plan for?",
+          "options": ["There are no network calls to secure", "Many service-to-service calls need authentication and encryption (e.g., mutual TLS), and secrets must be distributed securely", "Authorization can be ignored between services", "The database should be exposed directly to the internet"],
+          "correct": [1],
+          "explanation": "Microservices multiply network calls, so each needs authentication and encryption (mutual TLS/service mesh) and secure secret distribution; per-service authorization still matters. Ignoring these or exposing the database directly is unsafe.",
+          "tip": "More services = more internal calls to authenticate, encrypt, and authorize."
+        },
+        {
+          "q": "A design must protect encryption keys so that they are generated, stored, and used without ever appearing in application memory in plaintext. Which control BEST meets this?",
+          "options": ["A hardware security module or managed key service that performs crypto operations internally", "Storing keys in an environment variable on the application host", "Embedding keys in a compiled binary to make extraction harder", "Encrypting keys with a second key held in the same configuration file"],
+          "correct": [0],
+          "explanation": "An HSM or a managed key service holds the key material inside a protected boundary and exposes only operations such as sign, encrypt, and decrypt, so the plaintext key never reaches the application. Environment variables are readable by anything on the host, compiled-in keys are trivially recoverable from the binary, and wrapping a key with another key stored alongside it simply moves the problem one file over.",
+          "tip": "If the plaintext key must never touch the app, the answer is an HSM or managed key service."
+        },
+        {
+          "q": "A retailer wants to remove primary account numbers from its order and analytics systems entirely, while still allowing those systems to link a customer's repeat purchases. Which approach fits BEST?",
+          "options": ["Tokenization, replacing the PAN with a surrogate value with no mathematical relationship to the original", "Encrypting the PAN in every database with a shared application key", "Hashing the PAN with an unsalted fast hash", "Truncating the PAN to the last four digits everywhere"],
+          "correct": [0],
+          "explanation": "Tokenization substitutes a surrogate that carries no derivable relationship to the original value, so the downstream systems keep referential consistency while falling largely out of scope, with the real values held in a hardened token vault. Encryption keeps the value recoverable wherever the key reaches, an unsalted fast hash of a card number is brute-forceable given the small keyspace, and truncation destroys the linkage the retailer needs.",
+          "tip": "Tokenization removes the sensitive value from scope while preserving referential linkage. Encryption keeps it recoverable."
+        },
+        {
+          "q": "An architecture stops treating the internal network as trusted and instead authenticates and authorizes every request between services on its own merits. Which two statements about this approach are TRUE? (Choose 2)",
+          "options": ["Each service-to-service call must carry verifiable identity and be authorized independently", "Network location alone is no longer sufficient grounds to grant access", "A perimeter firewall becomes unnecessary and can be removed", "Once a client authenticates at the edge, internal calls can be trusted implicitly"],
+          "correct": [0, 1],
+          "explanation": "Zero trust replaces implicit network trust with per-request verification, so every internal hop authenticates and is authorized on its own. Being inside the network proves nothing. Perimeter controls still add value as one layer among many, and implicit trust of internal calls after an edge authentication is precisely the assumption zero trust removes.",
+          "tip": "Zero trust means never trust, always verify, on every hop, not just at the edge."
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "num": 5,
+      "name": "Secure Software Implementation",
+      "pool": [
+        {
+          "q": "A web API concatenates user input directly into a SQL query. What is the correct primary defense against SQL injection?",
+          "options": ["HTML-encode the output", "Use parameterized queries / prepared statements", "Increase the database server's RAM", "Rename the database tables"],
+          "correct": [1],
+          "explanation": "Parameterized queries separate code from data so input can't alter query structure; combined with least-privilege DB accounts this is the fix. Output encoding addresses XSS, not SQL injection, and the other options are irrelevant.",
+          "tip": "SQL injection → parameterized queries / prepared statements."
+        },
+        {
+          "q": "Which defense most directly prevents stored and reflected cross-site scripting (XSS)?",
+          "options": ["Contextual output encoding of untrusted data when rendering", "Enabling gzip compression", "Using a faster web server", "Storing sessions in the database"],
+          "correct": [0],
+          "explanation": "XSS is prevented primarily by contextual output encoding when rendering untrusted data (with CSP and HttpOnly cookies as defense in depth). Compression, server speed, and session storage don't address it.",
+          "tip": "XSS → contextual output encoding (+ CSP, HttpOnly)."
+        },
+        {
+          "q": "Why is allowlist input validation generally preferred over denylist validation?",
+          "options": ["Denylists are faster to execute", "Allowlists accept only known-good input, so attackers can't slip through encodings the denylist didn't anticipate", "Allowlists require no code", "Denylists are required by law"],
+          "correct": [1],
+          "explanation": "Allowlists define exactly what is acceptable and reject everything else, so novel malicious encodings are blocked. Denylists must enumerate every bad pattern and inevitably miss some.",
+          "tip": "Allow known-good beats block known-bad."
+        },
+        {
+          "q": "Input should be reduced to its simplest, standard form BEFORE validation to prevent bypasses using alternate encodings. What is this step called?",
+          "options": ["Serialization", "Canonicalization", "Compression", "Minification"],
+          "correct": [1],
+          "explanation": "Canonicalization normalizes input (resolving %2e%2e, unicode variants, path traversal sequences) so validation can't be bypassed with encoded equivalents. Validating before canonicalizing is a common flaw.",
+          "tip": "Canonicalize first, then validate."
+        },
+        {
+          "q": "A parser reads XML from users and resolves external entities, letting an attacker read local files. What is this vulnerability, and its fix?",
+          "options": ["CSRF; add anti-CSRF tokens", "XXE; disable external entity resolution in the parser", "Clickjacking; add frame-busting", "Open redirect; validate URLs"],
+          "correct": [1],
+          "explanation": "This is XML external entity (XXE) injection; the fix is to disable external entity (and DTD) processing in the XML parser. The other pairs address unrelated vulnerabilities.",
+          "tip": "XML + external entities reading files = XXE → disable external entities."
+        },
+        {
+          "q": "An attacker changes the numeric ID in a request and retrieves another user's record because the server never checks ownership. What flaw is this?",
+          "options": ["Insecure direct object reference / broken object-level authorization (IDOR/BOLA)", "Buffer overflow", "Race condition", "Weak password hashing"],
+          "correct": [0],
+          "explanation": "IDOR/BOLA occurs when the app trusts a client-supplied object identifier without verifying the requester is authorized for that object. The fix is per-object authorization on every request.",
+          "tip": "Changing an ID to read someone else's data = IDOR → enforce per-object authorization."
+        },
+        {
+          "q": "Which is a correct secure session management practice?",
+          "options": ["Reuse the same session ID before and after login", "Generate session IDs with a CSPRNG, regenerate on login, expire on logout/idle, and set Secure + HttpOnly", "Put the session ID in the URL", "Never expire sessions"],
+          "correct": [1],
+          "explanation": "Sessions should use cryptographically random IDs, regenerate on login (defeating fixation), expire on logout and idle timeout, and travel only over TLS with Secure and HttpOnly flags. The other options enable fixation, leakage, or hijacking.",
+          "tip": "Regenerate on login; Secure + HttpOnly; expire on idle."
+        },
+        {
+          "q": "An application returns full stack traces and database error messages to end users when something breaks. What is the security problem?",
+          "options": ["It improves performance", "Information disclosure: internal details help attackers; errors should be logged server-side and shown generically to users", "It is required for accessibility", "It prevents SQL injection"],
+          "correct": [1],
+          "explanation": "Verbose errors leak implementation details (information disclosure). Fail securely: log details server-side and show users a generic message. It neither helps performance nor prevents injection.",
+          "tip": "Log details privately; show users generic errors."
+        },
+        {
+          "q": "Which values must NEVER be written to application logs?",
+          "options": ["Timestamps of events", "Passwords, session tokens, and full payment card numbers", "The username performing an admin action", "The name of the endpoint called"],
+          "correct": [1],
+          "explanation": "Secrets such as passwords, session tokens, and full card numbers must never be logged, since logs are widely accessible and retained. Non-secret context like timestamps, actor identity, and endpoint is exactly what you should log.",
+          "tip": "Log the who/what/when; never log secrets."
+        },
+        {
+          "q": "For generating security tokens and session identifiers, which source of randomness is appropriate?",
+          "options": ["A standard pseudo-random function like rand()", "A cryptographically secure random generator (CSPRNG)", "The current timestamp", "An incrementing counter"],
+          "correct": [1],
+          "explanation": "Tokens and IDs must be unpredictable, so a CSPRNG is required. Ordinary rand(), timestamps, and counters are predictable and can be guessed or enumerated.",
+          "tip": "Tokens/keys/IDs → CSPRNG, never rand()."
+        },
+        {
+          "q": "Why combine peer code review with automated static analysis (SAST) rather than relying on one? (Choose 2)",
+          "options": ["Human review catches logic and business-rule flaws tools miss", "SAST reliably finds every runtime configuration issue", "SAST catches pattern flaws consistently across the whole codebase that humans skim past", "Code review measures memory usage at runtime"],
+          "correct": [0, 2],
+          "explanation": "Humans catch logic and design flaws; SAST consistently flags known insecure patterns across all code. SAST cannot see runtime configuration, and code review does not measure runtime memory, so those statements are false.",
+          "tip": "People find logic flaws; tools find pattern flaws — use both."
+        },
+        {
+          "q": "A shopping cart checks that an item is in stock, then a moment later completes the purchase using stale state, letting oversells happen. What class of flaw is this?",
+          "options": ["Cross-site scripting", "Time-of-check to time-of-use (TOCTOU) race condition", "Hardcoded secret", "Open redirect"],
+          "correct": [1],
+          "explanation": "A TOCTOU race condition occurs when state changes between the check and the use; the fix is atomic operations or locking and checking at time of use. The other options are unrelated flaw classes.",
+          "tip": "State changes between check and use = TOCTOU race condition."
+        },
+        {
+          "q": "A logged-in user visits a malicious page that silently submits a form to the banking application, and the browser attaches the user's session cookie automatically. What is the vulnerability and its primary defense?",
+          "options": ["Cross-site request forgery, defended with anti-forgery tokens and SameSite cookies", "Cross-site scripting, defended with output encoding", "Session fixation, defended by regenerating the session ID", "Clickjacking, defended with a Content Security Policy frame-ancestors directive"],
+          "correct": [0],
+          "explanation": "CSRF abuses the browser's automatic attachment of credentials to make an authenticated user issue an unintended state-changing request. The standard defenses are an unpredictable per-session or per-request anti-forgery token that the attacker's page cannot read, plus SameSite cookie attributes, with re-authentication for high-value actions. XSS is script injection, session fixation is forcing a known session ID, and clickjacking is UI overlay.",
+          "tip": "The attacker cannot read the response but can make the request. That is CSRF."
+        },
+        {
+          "q": "An application accepts a serialized object from the client and reconstructs it directly, allowing an attacker to trigger code execution during deserialization. What is the strongest mitigation?",
+          "options": ["Avoid deserializing untrusted data at all, and where unavoidable use a simple data-only format with strict type allowlisting and integrity checks", "Encrypt the serialized blob before sending it to the client", "Obfuscate the class names in the serialized payload", "Catch and log any exception thrown during deserialization"],
+          "correct": [0],
+          "explanation": "Insecure deserialization is dangerous because reconstructing an object can invoke code paths the attacker chooses. The reliable answer is not to deserialize attacker-controlled data, and where the design forces it, to use a plain data format such as JSON with an explicit allowlist of permitted types plus a signature or MAC to detect tampering. Encryption and obfuscation do not stop a payload the server itself will decrypt and process, and catching exceptions happens after the damage.",
+          "tip": "Untrusted serialized objects are attacker-supplied code paths. Prefer data-only formats with type allowlists."
+        },
+        {
+          "q": "A feature fetches a URL supplied by the user so the server can preview a link. An attacker supplies an internal address and reads the cloud instance metadata service. What is this, and what is the correct control?",
+          "options": ["Server-side request forgery, mitigated by allowlisting permitted destinations and blocking internal and link-local ranges", "Path traversal, mitigated by canonicalizing the file path", "Open redirect, mitigated by validating the redirect target", "DNS spoofing, mitigated by enabling DNSSEC"],
+          "correct": [0],
+          "explanation": "SSRF makes the server issue attacker-chosen requests from a position of trust inside the network, with cloud metadata endpoints a favorite target. The effective controls are an allowlist of permitted hosts and schemes, blocking private, loopback, and link-local ranges, resolving and re-checking the address after DNS resolution to defeat rebinding, and disabling automatic redirect following. The other options describe different flaws.",
+          "tip": "User-supplied URLs fetched by the server means SSRF. Allowlist destinations rather than trying to blocklist them."
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "num": 6,
+      "name": "Secure Software Testing",
+      "pool": [
+        {
+          "q": "Which testing technology analyzes source code or binaries WITHOUT executing the program?",
+          "options": ["DAST (dynamic analysis)", "SAST (static analysis)", "Load testing", "Penetration testing"],
+          "correct": [1],
+          "explanation": "SAST inspects source or compiled code without running it, giving early, broad coverage of pattern flaws. DAST tests a running app, and load and penetration testing require execution.",
+          "tip": "\"Without executing\" = static (SAST)."
+        },
+        {
+          "q": "A team tests the running application from the outside, like an attacker, with no source access. Which technique is this?",
+          "options": ["SAST", "DAST", "Code review", "Threat modeling"],
+          "correct": [1],
+          "explanation": "DAST (dynamic application security testing) exercises the running app from outside and finds runtime and deployment issues. SAST and code review analyze source; threat modeling is a design activity.",
+          "tip": "Running app, black-box, attacker's view = DAST."
+        },
+        {
+          "q": "What distinguishes generation-based (smart) fuzzing from mutation-based fuzzing?",
+          "options": ["Generation-based mutates random bytes with no format knowledge", "Generation-based builds inputs from a protocol/format specification for deeper coverage; mutation-based mutates valid samples", "They are identical", "Mutation-based requires the source code"],
+          "correct": [1],
+          "explanation": "Generation-based fuzzing constructs inputs from a model of the format/protocol, reaching deeper states; mutation-based fuzzing mutates known-good samples without needing the spec. Neither requires source code.",
+          "tip": "Spec-driven inputs = generation; mutate samples = mutation."
+        },
+        {
+          "q": "Vulnerability scanning and penetration testing relate how?",
+          "options": ["They are the same activity", "Scanning is automated breadth; penetration testing is manual depth finding chained/logic flaws; they complement each other", "Penetration testing is fully automated", "Scanning finds business-logic flaws better than humans"],
+          "correct": [1],
+          "explanation": "Automated scanning gives broad, repeatable coverage; skilled manual penetration testing finds chained exploits and business-logic flaws scanners miss. They complement rather than replace each other.",
+          "tip": "Scanner = breadth (automated); pentest = depth (human)."
+        },
+        {
+          "q": "What must be established in writing BEFORE a penetration test begins?",
+          "options": ["The marketing plan", "Rules of engagement: authorization, scope, techniques, time windows, and emergency contacts", "The source code license", "The UI style guide"],
+          "correct": [1],
+          "explanation": "Rules of engagement define written authorization, scope, permitted techniques, timing, and contacts; testing without authorization is illegal. The other documents are unrelated to test authorization.",
+          "tip": "No pentest without written authorization and scope (rules of engagement)."
+        },
+        {
+          "q": "Why should production personal data not be used directly in test environments?",
+          "options": ["It is too small to be useful", "Test environments have weaker controls and broader access, so real data should be synthetic or masked/anonymized", "It always improves test accuracy with no downside", "It is required by GDPR"],
+          "correct": [1],
+          "explanation": "Test environments typically have weaker controls and wider access, so using raw production personal data exposes it; use synthetic or properly masked data instead. GDPR would discourage, not require, this.",
+          "tip": "Test data should be synthetic or masked, never raw production PII."
+        },
+        {
+          "q": "Which scoring system rates a vulnerability's exploitability and impact on a 0–10 scale to help prioritize remediation?",
+          "options": ["CVSS", "SLA", "RTO", "KLOC"],
+          "correct": [0],
+          "explanation": "CVSS (Common Vulnerability Scoring System) scores severity 0–10 to drive prioritization; business context can adjust effective priority. SLA, RTO, and KLOC are unrelated measures.",
+          "tip": "0–10 severity for prioritization = CVSS."
+        },
+        {
+          "q": "After a security patch, the team re-runs previously passing tests to confirm existing functionality still works. What is this called?",
+          "options": ["Fuzz testing", "Regression testing", "Threat modeling", "Load testing"],
+          "correct": [1],
+          "explanation": "Regression testing verifies that recent changes did not break existing behavior (including security-relevant features). It is broader than only re-checking a single reintroduced bug.",
+          "tip": "\"Did the change break anything that worked before?\" = regression."
+        },
+        {
+          "q": "What is the PRIMARY purpose of security reviews during the SDLC?",
+          "options": ["To sell more software", "To validate the process and give assurance that required security controls and checkpoints are actually followed", "To replace all automated testing", "To measure server uptime"],
+          "correct": [1],
+          "explanation": "Security reviews are a process-level assurance activity confirming that requirements, design reviews, code-review policies, and gates are applied across the SDLC. They complement, not replace, technical testing.",
+          "tip": "Reviews assure the process and controls are followed."
+        },
+        {
+          "q": "Why can high code-coverage numbers give false confidence about test quality?",
+          "options": ["Coverage guarantees no bugs remain", "Coverage measures which lines execute, not whether tests actually assert correct behavior", "Coverage measures attacker skill", "Coverage only applies to hardware"],
+          "correct": [1],
+          "explanation": "Coverage tracks executed code, not the strength of assertions; tests can run code without verifying outcomes, so high coverage with weak assertions still misses defects.",
+          "tip": "Coverage = executed lines, not verified behavior."
+        },
+        {
+          "q": "Which testing focuses on proving the system safely REJECTS invalid, unexpected, or hostile input?",
+          "options": ["Positive/happy-path testing", "Negative testing", "Usability testing", "Localization testing"],
+          "correct": [1],
+          "explanation": "Negative testing feeds invalid and malicious inputs to confirm safe rejection; security testing is heavily negative testing. Happy-path testing only confirms expected inputs work.",
+          "tip": "Security testing leans on negative tests (safe rejection of bad input)."
+        },
+        {
+          "q": "Which two are runtime-oriented and therefore NOT things a purely static analyzer can reliably determine on its own? (Choose 2)",
+          "options": ["Actual memory usage under load", "Presence of a hardcoded credential string", "Definitive detection of all thread race conditions", "Use of a disallowed API call"],
+          "correct": [0, 2],
+          "explanation": "Actual runtime memory usage and definitive race-condition detection require executing the program with real scheduling/inputs. Hardcoded strings and disallowed API usage are visible in the code and are exactly what static analysis finds.",
+          "tip": "Runtime behavior (memory, races) needs execution; code patterns are static."
+        },
+        {
+          "q": "A build fails its security gate because an agent instrumented inside the running application observed a tainted value reaching a SQL sink during functional tests. Which testing technology produced this finding?",
+          "options": ["Interactive application security testing (IAST)", "Static application security testing (SAST)", "Software composition analysis (SCA)", "Manual code review"],
+          "correct": [0],
+          "explanation": "IAST instruments the running application and watches real execution, so it combines the code-level visibility of static analysis with the runtime accuracy of dynamic testing and typically reports fewer false positives. SAST analyzes code without running it, SCA inspects third-party dependencies for known vulnerabilities, and manual review is a human activity, not an instrumented agent.",
+          "tip": "Agent inside the running app observing real execution is IAST."
+        },
+        {
+          "q": "A team confirms the authentication module matches its written specification exactly, then discovers in a pilot that the specification itself failed to address the users' actual security need. Which distinction does this illustrate?",
+          "options": ["Verification succeeded but validation failed", "Validation succeeded but verification failed", "Both verification and validation succeeded", "Neither verification nor validation applies to security work"],
+          "correct": [0],
+          "explanation": "Verification asks whether the product was built to specification, and validation asks whether the right product was built for the real need. Meeting a flawed specification is verification without validation, which is why security requirements must be validated against threats and stakeholder needs rather than only checked against the document.",
+          "tip": "Verification: built it right. Validation: built the right thing."
+        },
+        {
+          "q": "An organization wants external researchers to report vulnerabilities safely instead of disclosing them publicly. Which two elements are essential to publish? (Choose 2)",
+          "options": ["A clearly defined scope and a safe-harbor statement protecting good-faith research", "A documented intake channel with acknowledgement and remediation timelines", "A requirement that researchers sign a permanent non-disclosure agreement before reporting", "A guarantee that every submission receives a monetary reward"],
+          "correct": [0, 1],
+          "explanation": "A coordinated vulnerability disclosure policy works when researchers know what they may test, that good-faith testing will not be met with legal action, where to send findings, and how quickly they will hear back and see a fix. Demanding a blanket NDA before a report is filed deters submissions and is widely criticized, and paid bounties are optional rather than a defining element.",
+          "tip": "Disclosure policy essentials: scope, safe harbor, intake channel, and timelines. Bounties are optional."
+        }
+      ]
+    },
+    {
+      "id": "d7",
+      "num": 7,
+      "name": "Secure Deployment, Operations, Maintenance",
+      "pool": [
+        {
+          "q": "Which set of actions best describes hardening a server before deployment?",
+          "options": ["Enable all services and keep default passwords for convenience", "Disable unused services and ports, change default credentials, and apply a secure baseline (e.g., CIS Benchmarks)", "Grant every account administrator rights", "Turn off logging to save space"],
+          "correct": [1],
+          "explanation": "Hardening removes or disables what isn't needed, changes defaults, and applies a known secure baseline. The other options enlarge the attack surface or remove needed visibility.",
+          "tip": "Hardening = remove defaults/unused services, apply a secure baseline."
+        },
+        {
+          "q": "Where should an application obtain database passwords and API keys at runtime?",
+          "options": ["Hardcoded in source code", "From a secrets manager / vault, injected at runtime, never committed to the repo or image", "In a public config file", "Emailed to each developer"],
+          "correct": [1],
+          "explanation": "Secrets should come from a vault/secrets manager at runtime and be rotated and audited; hardcoding or committing them leaks through repositories and images. Public files and email are obviously unsafe.",
+          "tip": "Secrets live in a vault, never in code or images."
+        },
+        {
+          "q": "List the phases of incident response in the correct order.",
+          "options": ["Detection, Preparation, Recovery, Containment, Eradication, Lessons learned", "Preparation, Detection & analysis, Containment, Eradication, Recovery, Lessons learned", "Containment, Preparation, Recovery, Detection, Lessons learned, Eradication", "Recovery, Containment, Detection, Preparation, Eradication, Lessons learned"],
+          "correct": [1],
+          "explanation": "The standard order is Preparation; Detection & analysis; Containment; Eradication; Recovery; Lessons learned. Preparation happens before any incident, and lessons learned closes the loop.",
+          "tip": "Prepare → Detect → Contain → Eradicate → Recover → Learn."
+        },
+        {
+          "q": "What is the difference between containment and eradication in incident response?",
+          "options": ["They are the same step", "Containment stops the spread (isolate hosts, block indicators); eradication removes the root cause (malware, attacker access, vulnerable component)", "Eradication happens before detection", "Containment means restoring from backup"],
+          "correct": [1],
+          "explanation": "Containment limits damage and spread first; eradication then removes the underlying cause so the threat can't persist. Restoration is part of recovery, not containment.",
+          "tip": "Contain = stop the bleeding; eradicate = remove the cause."
+        },
+        {
+          "q": "Define RTO and RPO.",
+          "options": ["RTO is max tolerable data loss; RPO is max tolerable downtime", "RTO is max tolerable downtime; RPO is max tolerable data loss (in time), which drives backup frequency", "Both measure CPU usage", "Both are encryption strengths"],
+          "correct": [1],
+          "explanation": "RTO (recovery time objective) is the maximum tolerable downtime; RPO (recovery point objective) is the maximum tolerable data loss measured in time, which sets how often backups must run.",
+          "tip": "RTO = time to restore; RPO = how much data (time) you can lose."
+        },
+        {
+          "q": "Which backup practice best protects against ransomware that encrypts online systems?",
+          "options": ["Keep a single backup on the same server", "Follow a 3-2-1 approach with at least one offline/offsite copy, encrypt backups, and test restores regularly", "Never test restores to save time", "Store backups only on the production SAN"],
+          "correct": [1],
+          "explanation": "3-2-1 (multiple copies, different media, one offline/offsite), encrypted and restore-tested, ensures a clean recovery point ransomware can't reach. Online-only or same-server backups can be encrypted along with production.",
+          "tip": "3-2-1 + offline copy + tested restores beats ransomware."
+        },
+        {
+          "q": "Why is the CI/CD pipeline itself treated as production-critical infrastructure to secure?",
+          "options": ["It is only used for documentation", "Whoever controls the pipeline can inject code into every release, so it needs signed commits/artifacts, restricted credentials, and integrity checks", "It has no access to secrets", "It cannot affect what ships"],
+          "correct": [1],
+          "explanation": "The pipeline builds and ships everything, so compromising it poisons all downstream releases; it must be hardened with signing, restricted credentials, and integrity checks. It clearly does affect what ships and handles secrets.",
+          "tip": "Control the pipeline = control every release; protect it accordingly."
+        },
+        {
+          "q": "Production has slowly diverged from the approved secure baseline over months of ad-hoc changes. What is this condition, and how is it detected?",
+          "options": ["Zero-day; detected by antivirus", "Configuration drift; detected by periodic compliance scans and re-applying infrastructure-as-code", "Data leakage; detected by DLP", "Denial of service; detected by load balancers"],
+          "correct": [1],
+          "explanation": "Configuration drift is divergence from the baseline over time; periodic compliance scanning and re-applying infrastructure-as-code detect and correct it. The other options describe unrelated problems.",
+          "tip": "Drift = baseline erosion over time → scan and re-apply IaC."
+        },
+        {
+          "q": "What is the essential goal of a vulnerability management cycle?",
+          "options": ["To run once per year and file a report", "To continuously discover, assess/prioritize (CVSS + context), remediate or mitigate, verify, and report", "To disable all monitoring", "To only patch after a breach"],
+          "correct": [1],
+          "explanation": "Vulnerability management is continuous: discover, prioritize with CVSS plus business context, remediate or apply compensating controls, verify, and report. Annual-only or reactive-only approaches leave long exposure windows.",
+          "tip": "Vuln management is a continuous loop, not an annual event."
+        },
+        {
+          "q": "What is the correct approach to patch management for a known-exploited vulnerability?",
+          "options": ["Deploy untested patches straight to production immediately", "Test in staging, then deploy promptly by risk priority, with an emergency path for actively exploited flaws", "Wait for the annual maintenance window regardless", "Ignore it if there is a firewall"],
+          "correct": [1],
+          "explanation": "Patches should be tested in staging then deployed promptly by risk, with an expedited emergency process for actively exploited flaws. Unpatched known vulnerabilities are among the most common breach causes.",
+          "tip": "Test in staging, patch by risk, expedite actively-exploited flaws."
+        },
+        {
+          "q": "Why should each application or service run under its own least-privilege service account rather than a shared one?",
+          "options": ["It looks tidier", "A shared account destroys accountability and widens the blast radius if compromised", "Shared accounts are faster", "It removes the need for logging"],
+          "correct": [1],
+          "explanation": "Per-service least-privilege accounts preserve accountability (actions trace to one service) and limit damage if credentials leak. A shared account can't be attributed and grants broad access on compromise.",
+          "tip": "Unique least-privilege accounts = accountability + smaller blast radius."
+        },
+        {
+          "q": "Which items belong in an incident response plan BEFORE an incident, beyond technical steps? (Choose 2)",
+          "options": ["Communication paths and legal/regulatory breach-notification duties", "The next marketing campaign", "Evidence preservation and chain-of-custody procedures", "The office lunch menu"],
+          "correct": [0, 2],
+          "explanation": "An IR plan must predefine communications, legal/regulatory notification timelines, and evidence preservation with chain of custody, so they aren't improvised mid-incident. Marketing and lunch are irrelevant.",
+          "tip": "Pre-plan comms, notification duties, and evidence handling."
+        },
+        {
+          "q": "An investigator notices that a compromised host's local log file has gaps around the time of the intrusion. Which control would MOST likely have preserved the evidence?",
+          "options": ["Forwarding logs in near real time to a separate append-only collector outside the host's trust boundary", "Increasing the local log file rotation size", "Enabling debug-level logging on the host", "Compressing local logs nightly to save disk"],
+          "correct": [0],
+          "explanation": "An attacker with control of a host can edit or delete anything stored on it, so log integrity depends on getting records off the host quickly to a collector the compromised account cannot write to, ideally append-only and with time synchronization. Larger files, more verbosity, and compression all leave the records in the attacker's reach.",
+          "tip": "Logs that stay on the compromised host are editable by the attacker. Ship them off immediately."
+        },
+        {
+          "q": "A team wants to release a change to a small slice of production traffic first, watch error and security telemetry, and pull back instantly if something is wrong. Which deployment approach is this, and what makes it safer?",
+          "options": ["Canary release, because blast radius is limited and rollback is fast and rehearsed", "Big-bang release, because everyone gets the fix at once", "Manual hotfix applied directly to servers, because it is quickest", "Feature removal, because unused code cannot fail"],
+          "correct": [0],
+          "explanation": "A canary exposes a small percentage of real traffic to the new version while automated telemetry decides whether to proceed or roll back, so a defect or a newly introduced weakness affects few users and is reversible in minutes. Big-bang releases maximize blast radius, direct manual server edits bypass the pipeline and create drift, and the last option is not a deployment strategy.",
+          "tip": "Canary and blue-green both exist to shrink blast radius and make rollback a routine, tested action."
+        },
+        {
+          "q": "During an incident, the team must preserve a compromised virtual machine's disk in a way that will hold up to later scrutiny. Which practice is essential?",
+          "options": ["Take a forensic image, record a cryptographic hash of it, and document every transfer of custody", "Reboot the machine to clear the malware, then archive the disk", "Let engineers copy files they think are relevant to a shared drive", "Delete the compromised instance and restore from the last backup immediately"],
+          "correct": [0],
+          "explanation": "Evidence is only credible if it can be shown to be unaltered and continuously accounted for, which means imaging the volume, hashing the image so any later change is detectable, and maintaining an unbroken chain of custody record. Rebooting destroys volatile evidence, ad-hoc copying loses context and integrity, and destroying the instance before imaging discards the evidence entirely.",
+          "tip": "Image, hash, and document custody before anything else touches the compromised system."
+        }
+      ]
+    },
+    {
+      "id": "d8",
+      "num": 8,
+      "name": "Secure Software Supply Chain",
+      "pool": [
+        {
+          "q": "When a new vulnerability is disclosed in a popular library, which artifact lets a team instantly answer \"are we affected, and where?\"",
+          "options": ["A software bill of materials (SBOM)", "A load test report", "A marketing brochure", "A UML diagram"],
+          "correct": [0],
+          "explanation": "An SBOM is a complete inventory of every component and version in a product, enabling rapid impact analysis when a component vulnerability appears. The other artifacts don't inventory dependencies.",
+          "tip": "\"Are we affected?\" answered fast = SBOM."
+        },
+        {
+          "q": "What is the PRIMARY objective of secure software supply chain practices?",
+          "options": ["To ship faster than competitors", "To lower the chance of incorporating tampered or malicious third-party components", "To guarantee compliance with every regulation", "To reduce the number of developers"],
+          "correct": [1],
+          "explanation": "Supply chain security aims to prevent compromised or malicious dependencies from entering builds and releases, via SBOMs, signing, reproducible builds, and dependency scanning. Speed and full compliance are not the core goal.",
+          "tip": "Supply chain security = keep tampered/malicious components out."
+        },
+        {
+          "q": "An attacker publishes a package to a public registry using the same name as a company's internal package but a higher version number, hoping the build pulls theirs. What attack is this?",
+          "options": ["Typosquatting", "Dependency confusion", "Cross-site scripting", "SQL injection"],
+          "correct": [1],
+          "explanation": "Dependency confusion abuses resolvers that prefer higher versions across public and private registries, tricking builds into pulling the attacker's public package. Typosquatting instead relies on misspelled names.",
+          "tip": "Same internal name, higher public version = dependency confusion."
+        },
+        {
+          "q": "What are reproducible builds, and why do they matter for supply chain security?",
+          "options": ["Builds that run faster each time", "Independent builds from the same source that produce bit-identical artifacts, proving the build wasn't tampered with", "Builds that skip testing", "Builds that only run in the cloud"],
+          "correct": [1],
+          "explanation": "Reproducible builds let independent parties rebuild from source and get identical binaries, so tampering during the build is detectable. Speed, skipping tests, and cloud location are unrelated.",
+          "tip": "Bit-identical rebuilds prove no build tampering."
+        },
+        {
+          "q": "A company vets a critical software vendor before purchase. Which evidence is MOST relevant to the vendor's security posture?",
+          "options": ["The vendor's office location", "Certifications and reports such as ISO 27001 and SOC 2, plus secure-development evidence and pentest summaries", "The vendor's logo design", "The number of social media followers"],
+          "correct": [1],
+          "explanation": "Security assessments rely on certifications (ISO 27001), attestations (SOC 2), and evidence of secure development and testing. Location, branding, and social metrics don't indicate security posture.",
+          "tip": "Vendor assurance = ISO 27001 / SOC 2 / pentest evidence."
+        },
+        {
+          "q": "How do copyleft licenses (e.g., GPL) differ from permissive licenses (e.g., MIT/BSD/Apache 2.0) in a way that matters for shipping proprietary software?",
+          "options": ["Copyleft has no obligations", "Strong copyleft can require derivative works to be released under the same license, whereas permissive licenses generally allow proprietary use with attribution", "Permissive licenses forbid all commercial use", "They are legally identical"],
+          "correct": [1],
+          "explanation": "Strong copyleft (GPL) can force derivative works to adopt the same license, a real risk for proprietary products if linked improperly; permissive licenses allow proprietary use with attribution (Apache 2.0 also grants patents). An SBOM should track licenses, not just versions.",
+          "tip": "GPL can be \"viral\"; MIT/BSD/Apache are permissive."
+        },
+        {
+          "q": "A trusted open-source package is hijacked and a malicious version is published. Which practice best mitigates blindly adopting it?",
+          "options": ["Always auto-update to the latest version instantly", "Pin dependency versions and review updates (and monitor for maintainer/account compromise) before adopting", "Disable all dependency scanning", "Trust any signed package without checking the signer"],
+          "correct": [1],
+          "explanation": "Version pinning plus reviewing updates prevents automatically pulling a hijacked release, and monitoring catches maintainer compromise. Blind auto-update and disabling scanning increase risk.",
+          "tip": "Pin versions and review updates; don't blindly auto-adopt."
+        },
+        {
+          "q": "What distinguishes provenance from pedigree for a software component?",
+          "options": ["They mean the same thing", "Pedigree is where a component came from and how it was built; provenance is the verifiable chain of custody from source to artifact", "Provenance is the file size", "Pedigree is the license type"],
+          "correct": [1],
+          "explanation": "Pedigree describes origin and build history; provenance is the verifiable, tamper-evident chain of custody from source to the final artifact. Verifying checksums and signatures supports provenance.",
+          "tip": "Pedigree = origin/history; provenance = verifiable chain of custody."
+        },
+        {
+          "q": "How should software updates be delivered to prevent attackers from pushing malicious updates through the update channel?",
+          "options": ["Over plain HTTP with no verification", "Sign updates and verify signatures before install, protecting the signing keys (ideally in an HSM)", "Let any server on the network push updates", "Disable update verification for speed"],
+          "correct": [1],
+          "explanation": "Signed updates verified before installation, with signing keys protected in an HSM, prevent update-channel hijacking. Unsigned/unverified delivery is exactly what attackers exploit.",
+          "tip": "Sign updates, verify before install, protect the signing keys."
+        },
+        {
+          "q": "What is the ongoing nature of third-party/vendor risk management?",
+          "options": ["A one-time check at purchase is sufficient", "It is continuous: re-assess periodically and on triggers such as a breach at the vendor, ownership change, or EOL announcement", "It ends once the contract is signed", "It only matters for hardware"],
+          "correct": [1],
+          "explanation": "Vendor posture changes over time, so risk must be re-assessed periodically and on trigger events. A single purchase-time check leaves emerging risks unmanaged.",
+          "tip": "Vendor risk is continuous, not one-and-done."
+        },
+        {
+          "q": "Which continuous practice identifies known-vulnerable open-source components in your dependencies?",
+          "options": ["Software composition analysis (SCA)", "Load testing", "UX research", "Chaos engineering"],
+          "correct": [0],
+          "explanation": "SCA scans dependencies against vulnerability databases (and flags license issues) continuously. Load testing, UX research, and chaos engineering address other concerns.",
+          "tip": "Scanning dependencies for known CVEs = SCA."
+        },
+        {
+          "q": "Which two are sound criteria when selecting a third-party component to depend on? (Choose 2)",
+          "options": ["It is actively maintained and responsive to security reports", "It has the most transitive dependencies possible", "Its license is compatible with your product", "It was last updated many years ago"],
+          "correct": [0, 2],
+          "explanation": "Prefer actively maintained, security-responsive components with a compatible license. Maximizing transitive dependencies enlarges risk, and abandoned (long-unmaintained) components are a silent hazard.",
+          "tip": "Pick maintained, security-responsive, license-compatible components."
+        },
+        {
+          "q": "A company routes all package installs through an internal proxy registry that mirrors vetted versions, rather than letting builds pull straight from public registries. Which two benefits does this MOST directly provide? (Choose 2)",
+          "options": ["Builds keep working if the upstream package is deleted or the public registry is unavailable", "A single controlled point at which packages can be scanned and approved before developers can consume them", "It removes the need to track transitive dependencies", "It guarantees the packages contain no vulnerabilities"],
+          "correct": [0, 1],
+          "explanation": "An internal mirror insulates builds from upstream deletion and outages and creates one chokepoint where scanning, license checks, and approval can be enforced, and it also helps defeat dependency confusion by resolving internal names locally. It does not eliminate the need to inventory transitive dependencies, and mirroring a package does nothing to make it free of vulnerabilities.",
+          "tip": "An internal mirror gives availability plus a single enforcement point. It is not a vulnerability guarantee."
+        },
+        {
+          "q": "An SBOM review shows the application declares 40 direct dependencies but resolves to over 900 components at build time. What is the security significance?",
+          "options": ["Most of the real attack surface is transitive, so scanning and policy must cover the full resolved dependency graph, not just declared dependencies", "Transitive dependencies are the upstream maintainers' responsibility and fall outside the team's risk", "The count is only a performance concern and has no security meaning", "Only dependencies imported directly in source code can contain exploitable vulnerabilities"],
+          "correct": [0],
+          "explanation": "Code you never chose still executes in your process with your privileges, and historically many high-impact incidents arrived through a dependency several levels down. Risk management therefore has to operate on the fully resolved graph, using lockfiles for deterministic resolution and scanning every component the build actually pulls in. Responsibility for what ships cannot be delegated upstream.",
+          "tip": "You ship the whole resolved graph, not just the dependencies you named."
+        },
+        {
+          "q": "A critical dependency has had no commits, releases, or security responses for three years, and an open vulnerability report sits unanswered. What is the MOST appropriate response?",
+          "options": ["Treat it as an unmanaged risk: assess replacement or forking with a committed maintenance owner, and track it until resolved", "Do nothing, since stable code that has not changed is inherently safe", "Pin the version permanently and remove it from dependency scanning to reduce alert noise", "Copy the source into the codebase without recording its origin or license"],
+          "correct": [0],
+          "explanation": "An abandoned component means nobody will ship you a fix when the next vulnerability lands, so the exposure is open-ended. The disciplined options are to migrate to a maintained alternative or to fork it with a named internal owner accepting the maintenance burden, either way tracked as a risk with a deadline. Silence is not safety, suppressing scanner findings hides the exposure, and vendoring code without provenance or license records creates both legal and supply chain problems.",
+          "tip": "Unmaintained means no future fixes. Plan to replace or knowingly adopt the maintenance yourself."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Shared assets copied into the APK web dir at build time (single source lives
+# at repo root). Run scripts/sync-assets.mjs to regenerate.
+app/audio/
+app/cards.json
+app/exams.json
+app/exam.js
+app/exam.css
+
+# Capacitor / Android build outputs
+android/app/src/main/assets/public/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/app/release/
+android/capacitor-cordova-android-plugins/
+*.apk
+

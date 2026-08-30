@@ -1,0 +1,1378 @@
+{
+ "generated": "2026-07-23",
+ "total": 188,
+ "domains": [
+  {
+   "id": "d1",
+   "num": 1,
+   "name": "Secure Software Concepts",
+   "cards": [
+    {
+     "n": 1,
+     "front": "What are the three components of the CIA triad?",
+     "back": "Confidentiality, Integrity, and Availability: the core objectives every security control ultimately serves.",
+     "q": "audio/d1/01-q.mp3",
+     "a": "audio/d1/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "What does confidentiality mean and what are its main controls?",
+     "back": "Information is disclosed only to authorized parties. Main controls: encryption at rest and in transit, access control, and data classification.",
+     "q": "audio/d1/02-q.mp3",
+     "a": "audio/d1/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "What does integrity mean and what are its main controls?",
+     "back": "Protection against unauthorized modification. Main controls: hashing, digital signatures, checksums, input validation, and change control.",
+     "q": "audio/d1/03-q.mp3",
+     "a": "audio/d1/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "What does availability mean and what are its main controls?",
+     "back": "Systems and data are accessible when needed. Main controls: redundancy, failover clustering, load balancing, backups, and DDoS protection.",
+     "q": "audio/d1/04-q.mp3",
+     "a": "audio/d1/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "Which CIA property does a DDoS attack threaten?",
+     "back": "Availability. It does not disclose or modify data, it makes the service unreachable.",
+     "q": "audio/d1/05-q.mp3",
+     "a": "audio/d1/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "Verifying a file hash after download checks which property?",
+     "back": "Integrity: the hash proves the file was not modified in transit.",
+     "q": "audio/d1/06-q.mp3",
+     "a": "audio/d1/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What is the difference between identification and authentication?",
+     "back": "Identification is claiming an identity (a username). Authentication is proving that claim (password, token, biometric).",
+     "q": "audio/d1/07-q.mp3",
+     "a": "audio/d1/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What is authorization?",
+     "back": "Determining what an already-authenticated identity is allowed to do.",
+     "q": "audio/d1/08-q.mp3",
+     "a": "audio/d1/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What is accountability and what enables it?",
+     "back": "Tracing every action to a specific individual, enabled mainly by audit logs and unique (non-shared) accounts.",
+     "q": "audio/d1/09-q.mp3",
+     "a": "audio/d1/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What is non-repudiation and what provides it?",
+     "back": "A party cannot deny having performed an action. Provided by digital signatures combined with trustworthy logging and unique identities.",
+     "q": "audio/d1/10-q.mp3",
+     "a": "audio/d1/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "Why do shared accounts destroy accountability?",
+     "back": "Actions in the logs cannot be traced to one individual, which also breaks non-repudiation.",
+     "q": "audio/d1/11-q.mp3",
+     "a": "audio/d1/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "What counts as multi-factor authentication?",
+     "back": "Combining two or more DIFFERENT factor types: something you know, something you have, something you are. Two passwords are one factor type, so not MFA.",
+     "q": "audio/d1/12-q.mp3",
+     "a": "audio/d1/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "Contrast DAC, MAC, RBAC, and ABAC.",
+     "back": "DAC: the resource owner decides access. MAC: the system enforces labels and clearances. RBAC: permissions bundled into job roles. ABAC: rules over attributes, the most fine-grained.",
+     "q": "audio/d1/13-q.mp3",
+     "a": "audio/d1/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "What is the principle of least privilege?",
+     "back": "Grant only the minimum access needed for the task, for the shortest time needed.",
+     "q": "audio/d1/14-q.mp3",
+     "a": "audio/d1/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "What is separation of duties?",
+     "back": "Split a critical task across two or more people so no single person can commit fraud alone.",
+     "q": "audio/d1/15-q.mp3",
+     "a": "audio/d1/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "How do dual control and job rotation relate to separation of duties?",
+     "back": "Dual control: two people must act together. Job rotation: rotating assignments deters and detects long-running abuse. Both complement separation of duties.",
+     "q": "audio/d1/16-q.mp3",
+     "a": "audio/d1/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "What is defense in depth?",
+     "back": "Multiple independent layers of controls so that no single control failure compromises the system.",
+     "q": "audio/d1/17-q.mp3",
+     "a": "audio/d1/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "What does fail secure (fail-safe defaults) mean?",
+     "back": "On failure or in the absence of an explicit rule, deny. A crashing payment component must reject transactions, not approve them.",
+     "q": "audio/d1/18-q.mp3",
+     "a": "audio/d1/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "What is economy of mechanism?",
+     "back": "Keep security designs small and simple so they can be reviewed and verified. Complexity is the enemy of security.",
+     "q": "audio/d1/19-q.mp3",
+     "a": "audio/d1/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "What is complete mediation?",
+     "back": "Check authorization on every access to every object, with no cached or bypassed checks. Hidden support logins violate this principle.",
+     "q": "audio/d1/20-q.mp3",
+     "a": "audio/d1/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "What is the open design principle?",
+     "back": "Security must not depend on secrecy of the design (Kerckhoffs’s principle). Security through obscurity is weak on its own.",
+     "q": "audio/d1/21-q.mp3",
+     "a": "audio/d1/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "What is least common mechanism?",
+     "back": "Minimize components shared between users to prevent unintended information paths between them.",
+     "q": "audio/d1/22-q.mp3",
+     "a": "audio/d1/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "What is psychological acceptability?",
+     "back": "Controls must be usable. If security is too cumbersome, users will bypass it.",
+     "q": "audio/d1/23-q.mp3",
+     "a": "audio/d1/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "What is the weakest link concept?",
+     "back": "Attackers target the least protected element, such as an unpatched test server or a careless insider, not the strongest control.",
+     "q": "audio/d1/24-q.mp3",
+     "a": "audio/d1/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "Why prefer proven components over building your own security mechanisms?",
+     "back": "Vetted libraries and platform features have been reviewed and battle-tested; homegrown mechanisms, especially cryptography, tend to contain unknown flaws.",
+     "q": "audio/d1/25-q.mp3",
+     "a": "audio/d1/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "What is a single point of failure and its remedy?",
+     "back": "Any component whose failure breaks the whole system; eliminate it through redundancy.",
+     "q": "audio/d1/26-q.mp3",
+     "a": "audio/d1/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What is attack surface reduction?",
+     "back": "Removing unused features, services, ports, and accounts so there is less exposed code for attackers to reach.",
+     "q": "audio/d1/27-q.mp3",
+     "a": "audio/d1/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "What is graceful degradation?",
+     "back": "When a component fails, keep offering reduced but safe functionality, like a read-only catalog while payments are down.",
+     "q": "audio/d1/28-q.mp3",
+     "a": "audio/d1/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "Name the three data states and a protection for each.",
+     "back": "At rest: disk or database encryption. In transit: TLS. In use: memory protection or secure enclaves, the hardest state to protect.",
+     "q": "audio/d1/29-q.mp3",
+     "a": "audio/d1/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "How is risk commonly expressed?",
+     "back": "As a function of threat, vulnerability, and impact (likelihood times impact). A threat exploits a vulnerability to harm an asset.",
+     "q": "audio/d1/30-q.mp3",
+     "a": "audio/d1/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "Give the formulas for SLE and ALE.",
+     "back": "SLE = Asset Value x Exposure Factor. ALE = SLE x ARO (annualized rate of occurrence).",
+     "q": "audio/d1/31-q.mp3",
+     "a": "audio/d1/31-a.mp3"
+    },
+    {
+     "n": 32,
+     "front": "Name the four risk responses.",
+     "back": "Avoid (stop the activity), mitigate (apply controls), transfer or share (insurance, contracts), accept (documented management decision).",
+     "q": "audio/d1/32-q.mp3",
+     "a": "audio/d1/32-a.mp3"
+    },
+    {
+     "n": 33,
+     "front": "What is residual risk vs inherent risk?",
+     "back": "Inherent risk exists before any controls; residual risk remains after controls. Residual risk never reaches zero and must be formally accepted by management.",
+     "q": "audio/d1/33-q.mp3",
+     "a": "audio/d1/33-a.mp3"
+    },
+    {
+     "n": 34,
+     "front": "Name the control types by nature with an example each.",
+     "back": "Administrative: policies and training. Technical or logical: encryption, firewalls, ACLs. Physical: locks, guards, cameras.",
+     "q": "audio/d1/34-q.mp3",
+     "a": "audio/d1/34-a.mp3"
+    },
+    {
+     "n": 35,
+     "front": "Name the control types by function.",
+     "back": "Preventive, detective (logs, IDS, audits), corrective (restore, patch), deterrent, and compensating (alternative when the primary control is not feasible).",
+     "q": "audio/d1/35-q.mp3",
+     "a": "audio/d1/35-a.mp3"
+    },
+    {
+     "n": 36,
+     "front": "Rank policy, standard, procedure, and guideline by nature.",
+     "back": "Policy: high-level mandatory management intent. Standard: mandatory specific rules. Procedure: mandatory step-by-step instructions. Guideline: recommended only.",
+     "q": "audio/d1/36-q.mp3",
+     "a": "audio/d1/36-a.mp3"
+    },
+    {
+     "n": 37,
+     "front": "What is due diligence vs due care?",
+     "back": "Due diligence is investigating and understanding risks; due care is acting responsibly on that knowledge. Doing neither can create negligence liability.",
+     "q": "audio/d1/37-q.mp3",
+     "a": "audio/d1/37-a.mp3"
+    },
+    {
+     "n": 38,
+     "front": "What does the Bell-LaPadula model protect and what are its rules?",
+     "back": "Confidentiality. No read up, no write down.",
+     "q": "audio/d1/38-q.mp3",
+     "a": "audio/d1/38-a.mp3"
+    },
+    {
+     "n": 39,
+     "front": "What does the Biba model protect and what are its rules?",
+     "back": "Integrity. No read down, no write up.",
+     "q": "audio/d1/39-q.mp3",
+     "a": "audio/d1/39-a.mp3"
+    },
+    {
+     "n": 40,
+     "front": "What are Clark-Wilson and Brewer-Nash about?",
+     "back": "Clark-Wilson: integrity through well-formed transactions and separation of duties. Brewer-Nash (Chinese Wall): prevents conflicts of interest across competing clients’ data.",
+     "q": "audio/d1/40-q.mp3",
+     "a": "audio/d1/40-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "num": 2,
+   "name": "Secure Software Lifecycle Management",
+   "cards": [
+    {
+     "n": 1,
+     "front": "What does \"shift left\" mean?",
+     "back": "Introduce security as early as possible in the lifecycle; a defect found in requirements or design costs a fraction of the same defect found in production.",
+     "q": "audio/d2/01-q.mp3",
+     "a": "audio/d2/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "Name a security activity for each SDLC phase.",
+     "back": "Requirements: security requirements and data classification. Design: threat modeling. Implementation: secure coding, code review, SAST. Testing: DAST, penetration test. Deployment: hardening. Operations: monitoring and patching. End of life: secure decommissioning.",
+     "q": "audio/d2/02-q.mp3",
+     "a": "audio/d2/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "How does security fit into waterfall vs agile?",
+     "back": "Waterfall: security gates map naturally to phase ends. Agile: security goes into the definition of done, security user stories, and per-sprint activities.",
+     "q": "audio/d2/03-q.mp3",
+     "a": "audio/d2/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "What characterizes DevSecOps?",
+     "back": "Security automated inside the CI/CD pipeline (SAST, dependency scanning, container and infrastructure-as-code scanning) with the mindset that everyone owns security.",
+     "q": "audio/d2/04-q.mp3",
+     "a": "audio/d2/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "What is a security gate?",
+     "back": "A defined checkpoint the project cannot pass until security criteria are met, such as an approved threat model or no open critical findings.",
+     "q": "audio/d2/05-q.mp3",
+     "a": "audio/d2/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What is a bug bar?",
+     "back": "A pre-agreed severity threshold above which defects MUST be fixed before release; it prevents ad-hoc risk acceptance under deadline pressure.",
+     "q": "audio/d2/06-q.mp3",
+     "a": "audio/d2/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "Who should be part of a go/no-go release decision?",
+     "back": "Security sign-off must be included alongside business and engineering stakeholders.",
+     "q": "audio/d2/07-q.mp3",
+     "a": "audio/d2/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What are security champions?",
+     "back": "Developers inside each team with extra security training who act as the security team’s local extension; they scale security expertise.",
+     "q": "audio/d2/08-q.mp3",
+     "a": "audio/d2/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "Why does a blameless security culture matter?",
+     "back": "People only report problems when reporting is safe; blame suppresses the reports you most need.",
+     "q": "audio/d2/09-q.mp3",
+     "a": "audio/d2/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What is security debt?",
+     "back": "Accumulated unfixed security findings and postponed security work; it must be tracked and paid down like technical debt.",
+     "q": "audio/d2/10-q.mp3",
+     "a": "audio/d2/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "Give three example security metrics.",
+     "back": "Security defect density per KLOC, mean time to remediate a vulnerability, and percentage of teams doing threat modeling (also SAST/DAST coverage, findings by severity and age).",
+     "q": "audio/d2/11-q.mp3",
+     "a": "audio/d2/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "What should security metrics be used for?",
+     "back": "Driving decisions and improvement, not just reporting.",
+     "q": "audio/d2/12-q.mp3",
+     "a": "audio/d2/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "Compare OWASP SAMM and BSIMM.",
+     "back": "Both are secure-development maturity models. SAMM is prescriptive and self-assessed; BSIMM is descriptive, measuring what real organizations actually do.",
+     "q": "audio/d2/13-q.mp3",
+     "a": "audio/d2/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "What does configuration management provide?",
+     "back": "Version control, baselines, and a controlled change process so every change is traceable: who, what, when, why. Uncontrolled change is a leading cause of outages and vulnerabilities.",
+     "q": "audio/d2/14-q.mp3",
+     "a": "audio/d2/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "What does a change control board do?",
+     "back": "Reviews and approves significant changes, weighing security impact before deployment.",
+     "q": "audio/d2/15-q.mp3",
+     "a": "audio/d2/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "What belongs to secure release management?",
+     "back": "Signed artifacts, verified provenance, staged rollout, and a rollback plan.",
+     "q": "audio/d2/16-q.mp3",
+     "a": "audio/d2/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "Name the key steps of decommissioning software.",
+     "back": "Notify stakeholders, migrate or archive data per retention rules, revoke credentials and keys, remove DNS and firewall entries, sanitize media, update inventory and documentation.",
+     "q": "audio/d2/17-q.mp3",
+     "a": "audio/d2/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "Where do data retention periods come from?",
+     "back": "Legal and regulatory requirements plus operational need, never developer convenience. Keep data only as long as required.",
+     "q": "audio/d2/18-q.mp3",
+     "a": "audio/d2/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "Name the three media sanitization levels.",
+     "back": "Clear: logical overwrite against simple recovery. Purge: cryptographic erase or degauss against lab recovery. Destroy: physical destruction. Choose by data sensitivity.",
+     "q": "audio/d2/19-q.mp3",
+     "a": "audio/d2/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "What is software escrow?",
+     "back": "Source code held by a neutral third party and released to the customer if the vendor fails; a continuity control agreed in contracts.",
+     "q": "audio/d2/20-q.mp3",
+     "a": "audio/d2/20-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "num": 3,
+   "name": "Secure Software Requirements",
+   "cards": [
+    {
+     "n": 1,
+     "front": "What is a functional security requirement? Give an example.",
+     "back": "Security behavior the software must perform, e.g. \"the system shall lock an account after 5 failed logins\" or \"log all administrative actions\".",
+     "q": "audio/d3/01-q.mp3",
+     "a": "audio/d3/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "What is a non-functional security requirement? Give an example.",
+     "back": "A security quality or constraint, e.g. \"passwords must be hashed with a memory-hard algorithm\" or \"TLS 1.2 or higher for all connections\".",
+     "q": "audio/d3/02-q.mp3",
+     "a": "audio/d3/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "Why is \"the system shall be secure\" a bad requirement?",
+     "back": "It is not specific, measurable, or testable. Good security requirements are all three.",
+     "q": "audio/d3/03-q.mp3",
+     "a": "audio/d3/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "Name four sources of security requirements.",
+     "back": "Business risk appetite, data classification, laws and regulations, contracts and standards (also threat intelligence, past incidents, internal policies).",
+     "q": "audio/d3/04-q.mp3",
+     "a": "audio/d3/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "What is a misuse case?",
+     "back": "A description of what a hostile actor attempts, e.g. enumerating valid usernames via login error messages. Written during requirements to surface the controls that prevent it.",
+     "q": "audio/d3/05-q.mp3",
+     "a": "audio/d3/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What is an abuse case?",
+     "back": "Legitimate functionality used in unintended harmful ways, like bulk-scraping a public API.",
+     "q": "audio/d3/06-q.mp3",
+     "a": "audio/d3/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What should every misuse case map to?",
+     "back": "At least one mitigating security requirement.",
+     "q": "audio/d3/07-q.mp3",
+     "a": "audio/d3/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What is a security user story? Give the pattern.",
+     "back": "\"As an attacker, I want to reuse a stolen session token, so that I can impersonate a user\" — leading to requirements like token expiry and rotation.",
+     "q": "audio/d3/08-q.mp3",
+     "a": "audio/d3/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What does data classification drive?",
+     "back": "Handling requirements: encryption, access control, retention, and masking in non-production environments. Classify by sensitivity and impact of disclosure.",
+     "q": "audio/d3/09-q.mp3",
+     "a": "audio/d3/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "Data owner vs data custodian?",
+     "back": "Owner: business accountability, sets the classification. Custodian: implements the protection, typically IT.",
+     "q": "audio/d3/10-q.mp3",
+     "a": "audio/d3/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "Data controller vs data processor?",
+     "back": "Controller decides the purpose and means of processing; processor acts on the controller’s instructions. Privacy-law roles.",
+     "q": "audio/d3/11-q.mp3",
+     "a": "audio/d3/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "Name five GDPR-style privacy principles.",
+     "back": "Lawful basis/consent, purpose limitation, data minimization, storage limitation, integrity and confidentiality (plus accuracy and accountability).",
+     "q": "audio/d3/12-q.mp3",
+     "a": "audio/d3/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "What is data minimization?",
+     "back": "Collect only the data actually needed for the stated purpose.",
+     "q": "audio/d3/13-q.mp3",
+     "a": "audio/d3/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "Name four data subject rights.",
+     "back": "Access, rectification, erasure (right to be forgotten), portability (also objection). Software must be designed so these can be fulfilled.",
+     "q": "audio/d3/14-q.mp3",
+     "a": "audio/d3/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "What is privacy by design and by default?",
+     "back": "Build privacy in from requirements onward, and ship with the most privacy-protective settings as the default.",
+     "q": "audio/d3/15-q.mp3",
+     "a": "audio/d3/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "What is a DPIA?",
+     "back": "Data Protection Impact Assessment: required for high-risk processing; identifies and mitigates privacy risks before processing starts.",
+     "q": "audio/d3/16-q.mp3",
+     "a": "audio/d3/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "Pseudonymization vs anonymization?",
+     "back": "Pseudonymization replaces identifiers but can be re-linked with a separately held key, so it is still personal data. Anonymization is irreversible and no longer personal data if truly irreversible.",
+     "q": "audio/d3/17-q.mp3",
+     "a": "audio/d3/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "Which regulation covers payment cards? Health data? Financial reporting?",
+     "back": "PCI DSS for payment card data, HIPAA for US health data, SOX for financial reporting of public companies, GDPR for EU personal data.",
+     "q": "audio/d3/18-q.mp3",
+     "a": "audio/d3/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "What is a requirements traceability matrix (RTM)?",
+     "back": "A mapping of each requirement through design, implementation, and test cases; proves every security requirement was implemented AND tested.",
+     "q": "audio/d3/19-q.mp3",
+     "a": "audio/d3/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "When is a security requirement \"done\"?",
+     "back": "When it passes the acceptance criteria and security tests derived from it, like any other requirement.",
+     "q": "audio/d3/20-q.mp3",
+     "a": "audio/d3/20-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d4",
+   "num": 4,
+   "name": "Secure Software Architecture and Design",
+   "cards": [
+    {
+     "n": 1,
+     "front": "What four questions does threat modeling answer?",
+     "back": "What are we building? What can go wrong? What are we going to do about it? Did we do a good job?",
+     "q": "audio/d4/01-q.mp3",
+     "a": "audio/d4/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "When should threat modeling happen?",
+     "back": "During design, and repeated whenever the architecture changes.",
+     "q": "audio/d4/02-q.mp3",
+     "a": "audio/d4/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "What are the elements of a data flow diagram used in threat modeling?",
+     "back": "External entities, processes, data stores, data flows, and trust boundaries. Threats cluster at trust boundaries.",
+     "q": "audio/d4/03-q.mp3",
+     "a": "audio/d4/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "What is a trust boundary?",
+     "back": "A point where the level of trust changes, e.g. internet to web tier, application to database, user to kernel. Validate at every boundary crossing.",
+     "q": "audio/d4/04-q.mp3",
+     "a": "audio/d4/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "Spell out STRIDE and the property each threat violates.",
+     "back": "Spoofing vs authentication, Tampering vs integrity, Repudiation vs non-repudiation, Information disclosure vs confidentiality, Denial of service vs availability, Elevation of privilege vs authorization.",
+     "q": "audio/d4/05-q.mp3",
+     "a": "audio/d4/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What is DREAD?",
+     "back": "An older threat scoring model: Damage, Reproducibility, Exploitability, Affected users, Discoverability. Largely replaced by CVSS-style scoring.",
+     "q": "audio/d4/06-q.mp3",
+     "a": "audio/d4/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What is PASTA?",
+     "back": "Process for Attack Simulation and Threat Analysis: a seven-stage, risk-centric threat modeling methodology aligning business objectives with technical threats.",
+     "q": "audio/d4/07-q.mp3",
+     "a": "audio/d4/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What is an attack tree?",
+     "back": "A tree whose root is the attacker goal and whose branches are alternative paths to achieve it; used to enumerate and compare attack paths.",
+     "q": "audio/d4/08-q.mp3",
+     "a": "audio/d4/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What are the possible dispositions for an identified threat?",
+     "back": "Mitigate, eliminate, transfer, or accept, tracked to closure like requirements.",
+     "q": "audio/d4/09-q.mp3",
+     "a": "audio/d4/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What is an attack surface?",
+     "back": "Every point where an attacker can interact with the system: ports, APIs, input fields, file parsers, integrations, privileged accounts.",
+     "q": "audio/d4/10-q.mp3",
+     "a": "audio/d4/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "How do you reduce an attack surface?",
+     "back": "Disable unused endpoints and services, require authentication earlier, and reduce the amount of privileged code.",
+     "q": "audio/d4/11-q.mp3",
+     "a": "audio/d4/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "Why should the database never be directly reachable from the internet?",
+     "back": "Layered (n-tier) architecture separates presentation, application, and data tiers so the most sensitive tier sits behind multiple boundaries.",
+     "q": "audio/d4/12-q.mp3",
+     "a": "audio/d4/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "Name three security implications of microservices.",
+     "back": "Many network calls to secure (mutual TLS, service mesh), per-service authentication and authorization, and secrets distribution. Blast radius per service is smaller, but the operational surface is larger.",
+     "q": "audio/d4/13-q.mp3",
+     "a": "audio/d4/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "What is zero trust?",
+     "back": "Never trust based on network location: authenticate and authorize every request, assume breach, verify explicitly, enforce least privilege.",
+     "q": "audio/d4/14-q.mp3",
+     "a": "audio/d4/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "In the cloud shared responsibility model, what always stays with the customer?",
+     "back": "Their data, identity and access management, and configuration. Misconfigured public storage buckets are the classic customer-side failure.",
+     "q": "audio/d4/15-q.mp3",
+     "a": "audio/d4/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "Give three secure design patterns.",
+     "back": "Broker or gateway mediating access, sandbox isolating untrusted code, and server-side secure session management with ID regeneration on login.",
+     "q": "audio/d4/16-q.mp3",
+     "a": "audio/d4/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "Symmetric vs asymmetric encryption: key difference and use?",
+     "back": "Symmetric: one shared key, fast, for bulk data (AES with an authenticated mode like GCM). Asymmetric: key pair (RSA, ECC), used for key exchange and signatures, too slow for bulk data.",
+     "q": "audio/d4/17-q.mp3",
+     "a": "audio/d4/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "How does TLS use both crypto families?",
+     "back": "Hybrid: asymmetric cryptography establishes a symmetric session key, then symmetric encryption protects the traffic.",
+     "q": "audio/d4/18-q.mp3",
+     "a": "audio/d4/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "Which hash algorithms are acceptable and which are broken?",
+     "back": "SHA-256 and SHA-3 are acceptable. MD5 and SHA-1 are broken for security use.",
+     "q": "audio/d4/19-q.mp3",
+     "a": "audio/d4/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "What is an HMAC?",
+     "back": "A keyed hash providing integrity plus authenticity of a message.",
+     "q": "audio/d4/20-q.mp3",
+     "a": "audio/d4/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "How must passwords be stored?",
+     "back": "Not encrypted but hashed with a slow, salted, memory-hard algorithm: bcrypt, scrypt, or Argon2. Unique per-user salts defeat rainbow tables.",
+     "q": "audio/d4/21-q.mp3",
+     "a": "audio/d4/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "How does a digital signature work and what does it provide?",
+     "back": "Hash the message, encrypt the hash with the sender’s private key. Provides integrity, authenticity, and non-repudiation.",
+     "q": "audio/d4/22-q.mp3",
+     "a": "audio/d4/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "What does PKI provide and what lifecycle must be designed in?",
+     "back": "Certificates bind identities to public keys via certificate authorities. Design in the lifecycle: issue, renew, and revoke (CRL/OCSP).",
+     "q": "audio/d4/23-q.mp3",
+     "a": "audio/d4/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "Name the stages of the key management lifecycle.",
+     "back": "Generation with strong randomness, distribution, storage (HSM or managed KMS, never hardcoded), rotation, revocation, destruction.",
+     "q": "audio/d4/24-q.mp3",
+     "a": "audio/d4/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "What is perfect forward secrecy?",
+     "back": "Ephemeral session keys ensure a later private-key compromise cannot decrypt previously recorded traffic.",
+     "q": "audio/d4/25-q.mp3",
+     "a": "audio/d4/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "Why never design your own cryptographic algorithm?",
+     "back": "Unvetted cryptography almost always contains subtle flaws; use standardized, battle-tested algorithms and libraries.",
+     "q": "audio/d4/26-q.mp3",
+     "a": "audio/d4/26-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d5",
+   "num": 5,
+   "name": "Secure Software Implementation",
+   "cards": [
+    {
+     "n": 1,
+     "front": "Why is allowlist input validation better than denylist?",
+     "back": "Allowlists accept only known-good input; denylists must anticipate every malicious encoding and attackers find the ones you missed.",
+     "q": "audio/d5/01-q.mp3",
+     "a": "audio/d5/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "What is canonicalization and why must it come before validation?",
+     "back": "Reducing input to its simplest standard form (resolving %2e%2e, unicode variants, ../ sequences). Validating before canonicalizing can be bypassed with encoded input.",
+     "q": "audio/d5/02-q.mp3",
+     "a": "audio/d5/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "Why is client-side validation not a security control?",
+     "back": "Attackers bypass the client entirely; validation must happen on the server. Client-side checks are user experience only.",
+     "q": "audio/d5/03-q.mp3",
+     "a": "audio/d5/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "What is SQL injection and its primary defense?",
+     "back": "Attacker input altering a database query. Defense: parameterized queries (prepared statements) plus least-privilege database accounts. Concatenating user input into SQL is the anti-pattern.",
+     "q": "audio/d5/04-q.mp3",
+     "a": "audio/d5/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "Name the three XSS types and the primary defenses.",
+     "back": "Reflected, stored, and DOM-based. Defenses: contextual output encoding, Content Security Policy as defense in depth, HttpOnly cookies for session tokens.",
+     "q": "audio/d5/05-q.mp3",
+     "a": "audio/d5/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What is CSRF and its defenses?",
+     "back": "The victim’s browser is tricked into sending an authenticated request. Defenses: anti-CSRF tokens, SameSite cookies, re-authentication for sensitive actions.",
+     "q": "audio/d5/06-q.mp3",
+     "a": "audio/d5/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What is a buffer overflow and which platform mitigations exist?",
+     "back": "Writing past a buffer’s end, corrupting memory, enabling code execution. Mitigations: bounds checking, safe functions, memory-safe languages, plus ASLR, DEP/NX, and stack canaries.",
+     "q": "audio/d5/07-q.mp3",
+     "a": "audio/d5/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What do ASLR, DEP, and stack canaries each do?",
+     "back": "ASLR randomizes memory layout, DEP/NX marks data pages non-executable, stack canaries detect overwritten return addresses.",
+     "q": "audio/d5/08-q.mp3",
+     "a": "audio/d5/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What is an integer overflow risk?",
+     "back": "Arithmetic exceeding type limits produces wrong sizes or bypassed checks; validate arithmetic on sizes and money.",
+     "q": "audio/d5/09-q.mp3",
+     "a": "audio/d5/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What is a TOCTOU race condition?",
+     "back": "State changes between the time of check and the time of use. Defense: atomic operations, locks, and checking at the time of use.",
+     "q": "audio/d5/10-q.mp3",
+     "a": "audio/d5/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "Why is deserializing untrusted data dangerous?",
+     "back": "Native deserializers can execute attacker-controlled object graphs. Use data-only formats and integrity checks; never natively deserialize untrusted input.",
+     "q": "audio/d5/11-q.mp3",
+     "a": "audio/d5/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "What is XXE and its defense?",
+     "back": "XML parsers resolving attacker-defined external entities to read files or make requests. Defense: disable external entity resolution.",
+     "q": "audio/d5/12-q.mp3",
+     "a": "audio/d5/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "What is SSRF and its defenses?",
+     "back": "The server is tricked into making requests to internal systems such as cloud metadata endpoints. Defenses: allowlist outbound destinations, block internal ranges, validate URLs after resolution.",
+     "q": "audio/d5/13-q.mp3",
+     "a": "audio/d5/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "What is path traversal and its defense?",
+     "back": "../ sequences escaping intended directories. Defense: canonicalize then validate, use allowlists, keep user input out of paths.",
+     "q": "audio/d5/14-q.mp3",
+     "a": "audio/d5/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "How do you prevent command injection?",
+     "back": "Avoid invoking shells; use parameterized process APIs that separate the command from its arguments.",
+     "q": "audio/d5/15-q.mp3",
+     "a": "audio/d5/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "Why are hardcoded secrets dangerous and what replaces them?",
+     "back": "Credentials in source leak through repositories and binaries. Use secrets managers, environment-based injection, and secret scanning in CI.",
+     "q": "audio/d5/16-q.mp3",
+     "a": "audio/d5/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "What does \"fail securely\" mean in error handling?",
+     "back": "Catch errors, log details server-side, show users only generic messages. Stack traces and SQL errors in responses are information disclosure.",
+     "q": "audio/d5/17-q.mp3",
+     "a": "audio/d5/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "What should security logging capture and what must it never contain?",
+     "back": "Capture logins, failures, privilege changes, and sensitive operations with context. Never log passwords, session tokens, or full card numbers. Protect logs from tampering and centralize them.",
+     "q": "audio/d5/18-q.mp3",
+     "a": "audio/d5/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "Name four session management rules.",
+     "back": "Generate session IDs with a CSPRNG, regenerate on login (prevents fixation), expire on logout and idle timeout, transmit only over TLS with Secure and HttpOnly flags.",
+     "q": "audio/d5/19-q.mp3",
+     "a": "audio/d5/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "What is IDOR/BOLA and its defense?",
+     "back": "Insecure direct object reference: user A fetches user B’s record by changing an ID. Defense: enforce authorization per object on every request.",
+     "q": "audio/d5/20-q.mp3",
+     "a": "audio/d5/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "Name four secure API practices.",
+     "back": "Authenticate every endpoint, authorize per object, rate-limit, validate content types (and version your APIs).",
+     "q": "audio/d5/21-q.mp3",
+     "a": "audio/d5/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "Why is ordinary random() unsuitable for tokens?",
+     "back": "It is predictable. Use a cryptographically secure random generator (CSPRNG) for tokens, IDs, and keys.",
+     "q": "audio/d5/22-q.mp3",
+     "a": "audio/d5/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "What compiler and build hygiene supports security?",
+     "back": "Enable warnings and safety flags, treat warnings as errors, keep dependencies patched, verify checksums of third-party components.",
+     "q": "audio/d5/23-q.mp3",
+     "a": "audio/d5/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "Why combine code review with SAST?",
+     "back": "Human review catches logic flaws automated tools miss; tools catch pattern flaws humans skim past.",
+     "q": "audio/d5/24-q.mp3",
+     "a": "audio/d5/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "What is the \"implicit trust\" trap in implementation?",
+     "back": "Trusting hidden fields, client-set headers, or \"internal\" traffic without verification. Verify everything crossing a trust boundary.",
+     "q": "audio/d5/25-q.mp3",
+     "a": "audio/d5/25-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d6",
+   "num": 6,
+   "name": "Secure Software Testing",
+   "cards": [
+    {
+     "n": 1,
+     "front": "Verification vs validation?",
+     "back": "Verification: did we build it right, to spec? Validation: did we build the right thing, fit for purpose? Security needs both.",
+     "q": "audio/d6/01-q.mp3",
+     "a": "audio/d6/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "What is negative testing and why does security depend on it?",
+     "back": "Proving the system safely rejects invalid, unexpected, or hostile input. Security testing is heavily negative testing, functional tests only prove the happy path.",
+     "q": "audio/d6/02-q.mp3",
+     "a": "audio/d6/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "What are misuse-case tests?",
+     "back": "Each misuse case from requirements becomes a test proving that attack fails.",
+     "q": "audio/d6/03-q.mp3",
+     "a": "audio/d6/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "Why does every fixed vulnerability need a regression test?",
+     "back": "So the flaw can never silently return in a later change.",
+     "q": "audio/d6/04-q.mp3",
+     "a": "audio/d6/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "What is SAST and its strengths/weaknesses?",
+     "back": "Static analysis of source or binaries without running the program. Early, full code coverage, finds pattern flaws. Weakness: false positives and blindness to runtime configuration.",
+     "q": "audio/d6/05-q.mp3",
+     "a": "audio/d6/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What is DAST and its strengths/weaknesses?",
+     "back": "Dynamic testing of the running application from outside, like an attacker. Finds deployment and runtime issues. Weakness: no code visibility, coverage limited to reachable paths.",
+     "q": "audio/d6/06-q.mp3",
+     "a": "audio/d6/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What is IAST?",
+     "back": "Interactive testing: agents inside the running app observe code during functional tests, combining code visibility with runtime context and low false positives.",
+     "q": "audio/d6/07-q.mp3",
+     "a": "audio/d6/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What is RASP?",
+     "back": "Runtime application self-protection: a production agent that detects and blocks attacks in real time. A protective control, not a testing tool.",
+     "q": "audio/d6/08-q.mp3",
+     "a": "audio/d6/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What is SCA?",
+     "back": "Software composition analysis: scanning dependencies for known vulnerable components and license issues.",
+     "q": "audio/d6/09-q.mp3",
+     "a": "audio/d6/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "Mutation-based vs generation-based fuzzing?",
+     "back": "Mutation: mutate valid samples, no format knowledge needed. Generation (smart) fuzzing: build inputs from the protocol specification for deeper coverage. Crashes signal potential memory-safety flaws.",
+     "q": "audio/d6/10-q.mp3",
+     "a": "audio/d6/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "Vulnerability scanning vs penetration testing?",
+     "back": "Scanning is automated breadth; penetration testing is manual depth by skilled humans finding chained and logic flaws. They complement each other.",
+     "q": "audio/d6/11-q.mp3",
+     "a": "audio/d6/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "Black box vs white box vs gray box testing?",
+     "back": "Black box: no internal knowledge, most realistic, least coverage per hour. White box: full source and docs, most thorough. Gray box: partial knowledge, a common compromise.",
+     "q": "audio/d6/12-q.mp3",
+     "a": "audio/d6/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "What must rules of engagement cover before a penetration test?",
+     "back": "Written authorization, scope (systems, techniques, time windows), emergency contacts, and data handling. Testing without authorization is illegal.",
+     "q": "audio/d6/13-q.mp3",
+     "a": "audio/d6/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "Why must production personal data never be used in test environments?",
+     "back": "Test environments have weaker controls and wider access. Use synthetic or properly masked/anonymized data.",
+     "q": "audio/d6/14-q.mp3",
+     "a": "audio/d6/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "Why should test environments mirror production configuration?",
+     "back": "Many findings are configuration-dependent; a mismatched environment hides them.",
+     "q": "audio/d6/15-q.mp3",
+     "a": "audio/d6/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "What is CVSS?",
+     "back": "The Common Vulnerability Scoring System: scores exploitability and impact 0-10, driving prioritization and bug-bar decisions. Business context can adjust effective priority.",
+     "q": "audio/d6/16-q.mp3",
+     "a": "audio/d6/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "What is attack surface validation?",
+     "back": "Verifying the actually exposed surface (ports, endpoints, permissions) of a release candidate matches the approved design; catches drift.",
+     "q": "audio/d6/17-q.mp3",
+     "a": "audio/d6/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "What is cryptographic validation in testing?",
+     "back": "Verifying approved algorithms and modes are actually in use, certificates validate correctly, and weak protocol versions are disabled, rather than trusting the design document.",
+     "q": "audio/d6/18-q.mp3",
+     "a": "audio/d6/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "Which security tests belong in CI/CD vs periodic?",
+     "back": "Per change: SAST, SCA, targeted DAST. Periodically and at major releases: full penetration tests.",
+     "q": "audio/d6/19-q.mp3",
+     "a": "audio/d6/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "Why can high code coverage give false confidence?",
+     "back": "Coverage measures what tests execute, not what they assert; weak assertions pass over real defects.",
+     "q": "audio/d6/20-q.mp3",
+     "a": "audio/d6/20-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d7",
+   "num": 7,
+   "name": "Secure Deployment, Operations, Maintenance",
+   "cards": [
+    {
+     "n": 1,
+     "front": "What does hardening involve?",
+     "back": "Remove or disable everything not needed (services, ports, default accounts, samples), change default credentials, and apply secure baselines such as CIS Benchmarks, kept in version control.",
+     "q": "audio/d7/01-q.mp3",
+     "a": "audio/d7/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "Why separate development, test, and production environments?",
+     "back": "Isolation prevents test weaknesses from exposing production. Developers hold no standing production access; break-glass procedures with logging cover emergencies.",
+     "q": "audio/d7/02-q.mp3",
+     "a": "audio/d7/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "How should applications obtain secrets at runtime?",
+     "back": "From a vault or secrets manager, never from code, config files, or container images. Rotate secrets and audit access.",
+     "q": "audio/d7/03-q.mp3",
+     "a": "audio/d7/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "Why does each service need its own least-privilege account?",
+     "back": "A shared account destroys accountability and widens the blast radius of a compromise.",
+     "q": "audio/d7/04-q.mp3",
+     "a": "audio/d7/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "Why is the CI/CD pipeline production-critical infrastructure?",
+     "back": "Whoever controls the pipeline controls what ships. Protect it: signed commits and artifacts, integrity-checked steps, restricted credentials, no untrusted code in privileged stages.",
+     "q": "audio/d7/05-q.mp3",
+     "a": "audio/d7/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "What provides release integrity?",
+     "back": "Cryptographically signed releases verified at deployment, staged rollout (canary or blue-green), and a tested rollback plan.",
+     "q": "audio/d7/06-q.mp3",
+     "a": "audio/d7/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "Name the phases of the vulnerability management cycle.",
+     "back": "Discover (scanning, advisories), assess and prioritize (CVSS plus business context), remediate or mitigate, verify, report. Continuous, not annual.",
+     "q": "audio/d7/07-q.mp3",
+     "a": "audio/d7/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What are the essentials of patch management?",
+     "back": "Test in staging, deploy promptly by risk priority, and keep an emergency path for actively exploited flaws. Unpatched known vulnerabilities are the most common breach cause.",
+     "q": "audio/d7/08-q.mp3",
+     "a": "audio/d7/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What is configuration drift and how is it caught?",
+     "back": "Production diverging from the approved baseline over time; caught by periodic compliance scans and re-applying infrastructure-as-code.",
+     "q": "audio/d7/09-q.mp3",
+     "a": "audio/d7/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What should security monitoring include?",
+     "back": "Centralized logs in a SIEM, tamper protection, and alerts on patterns like repeated failures, privilege escalation, and unusual data volumes. Logs are also legal evidence.",
+     "q": "audio/d7/10-q.mp3",
+     "a": "audio/d7/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "List the six incident response phases in order.",
+     "back": "Preparation; detection and analysis; containment; eradication; recovery; lessons learned.",
+     "q": "audio/d7/11-q.mp3",
+     "a": "audio/d7/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "What belongs to IR preparation?",
+     "back": "The plan, roles, contacts, tooling, playbooks, and exercises, all BEFORE any incident.",
+     "q": "audio/d7/12-q.mp3",
+     "a": "audio/d7/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "What happens in containment vs eradication?",
+     "back": "Containment stops the spread (isolate hosts, block indicators, disable accounts). Eradication removes the cause (malware, attacker access, vulnerable component).",
+     "q": "audio/d7/13-q.mp3",
+     "a": "audio/d7/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "Which IR phase is most often skipped and why does it matter?",
+     "back": "Lessons learned: the blameless post-incident review that updates controls and the plan. It is where the organization actually improves.",
+     "q": "audio/d7/14-q.mp3",
+     "a": "audio/d7/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "What must an IR plan predefine besides technical steps?",
+     "back": "Communication paths, legal and regulatory notification duties with deadlines, and evidence preservation with chain of custody.",
+     "q": "audio/d7/15-q.mp3",
+     "a": "audio/d7/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "Business continuity vs disaster recovery?",
+     "back": "BC keeps the business running; DR restores the technology. Both need documented and TESTED plans, an untested plan is a hypothesis.",
+     "q": "audio/d7/16-q.mp3",
+     "a": "audio/d7/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "Define RTO and RPO.",
+     "back": "RTO: maximum tolerable downtime. RPO: maximum tolerable data loss measured in time, which drives backup frequency.",
+     "q": "audio/d7/17-q.mp3",
+     "a": "audio/d7/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "What makes a backup strategy resilient?",
+     "back": "Multiple copies on different media with one offline/offsite (3-2-1 style), encryption, and regularly TESTED restores. Ransomware targets online backups.",
+     "q": "audio/d7/18-q.mp3",
+     "a": "audio/d7/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "What should happen when software reaches end of life in operations?",
+     "back": "Plan migration before support ends, then decommission formally: revoke access and keys, sanitize media, update inventories.",
+     "q": "audio/d7/19-q.mp3",
+     "a": "audio/d7/19-a.mp3"
+    }
+   ]
+  },
+  {
+   "id": "d8",
+   "num": 8,
+   "name": "Secure Software Supply Chain",
+   "cards": [
+    {
+     "n": 1,
+     "front": "Why is the software supply chain a security concern?",
+     "back": "Modern software is assembled from custom code, open source, commercial components, cloud services, and build tooling; a compromise anywhere upstream becomes your vulnerability downstream.",
+     "q": "audio/d8/01-q.mp3",
+     "a": "audio/d8/01-a.mp3"
+    },
+    {
+     "n": 2,
+     "front": "Compare the risk profiles of build, COTS, open source, and outsourced software.",
+     "back": "In-house: most control, most effort. COTS: vendor-dependent, contract-driven assurance. Open source: transparent code but support is your problem. Outsourced: needs security requirements and verification in the contract.",
+     "q": "audio/d8/02-q.mp3",
+     "a": "audio/d8/02-a.mp3"
+    },
+    {
+     "n": 3,
+     "front": "What is an SBOM and what does it enable?",
+     "back": "A machine-readable inventory of every component and version in a product. It enables rapidly answering \"are we affected?\" when a component vulnerability is disclosed. Formats: SPDX, CycloneDX.",
+     "q": "audio/d8/03-q.mp3",
+     "a": "audio/d8/03-a.mp3"
+    },
+    {
+     "n": 4,
+     "front": "How are known-vulnerable components managed?",
+     "back": "Continuous SCA scanning against vulnerability databases, upgrading or mitigating affected components, and monitoring components already shipped.",
+     "q": "audio/d8/04-q.mp3",
+     "a": "audio/d8/04-a.mp3"
+    },
+    {
+     "n": 5,
+     "front": "Name four component selection criteria.",
+     "back": "Actively maintained, responsive to security reports, healthy community or vendor, compatible license (and no history of abandoned fixes). Abandoned dependencies are silent risk.",
+     "q": "audio/d8/05-q.mp3",
+     "a": "audio/d8/05-a.mp3"
+    },
+    {
+     "n": 6,
+     "front": "Pedigree vs provenance?",
+     "back": "Pedigree: where a component came from and how it was built. Provenance: the verifiable chain of custody from source to artifact. Verify checksums and signatures on everything.",
+     "q": "audio/d8/06-q.mp3",
+     "a": "audio/d8/06-a.mp3"
+    },
+    {
+     "n": 7,
+     "front": "What do permissive licenses (MIT, BSD, Apache 2.0) allow?",
+     "back": "Use in proprietary products with attribution; Apache 2.0 adds an explicit patent grant.",
+     "q": "audio/d8/07-q.mp3",
+     "a": "audio/d8/07-a.mp3"
+    },
+    {
+     "n": 8,
+     "front": "What does copyleft (GPL) require and how is LGPL different?",
+     "back": "Derivative works must be released under the same license; improper linking can force opening proprietary source. LGPL is weaker: dynamic linking is usually acceptable.",
+     "q": "audio/d8/08-q.mp3",
+     "a": "audio/d8/08-a.mp3"
+    },
+    {
+     "n": 9,
+     "front": "What is dependency confusion?",
+     "back": "An attacker publishes a package with the same name as an internal package on a public registry with a higher version; misconfigured builds pull the attacker’s package.",
+     "q": "audio/d8/09-q.mp3",
+     "a": "audio/d8/09-a.mp3"
+    },
+    {
+     "n": 10,
+     "front": "What is typosquatting?",
+     "back": "Malicious packages named one keystroke away from popular ones, catching developers who mistype.",
+     "q": "audio/d8/10-q.mp3",
+     "a": "audio/d8/10-a.mp3"
+    },
+    {
+     "n": 11,
+     "front": "How do you mitigate a trusted package turning malicious in an update?",
+     "back": "Pin versions and review updates before adopting them; monitor for maintainer account compromises.",
+     "q": "audio/d8/11-q.mp3",
+     "a": "audio/d8/11-a.mp3"
+    },
+    {
+     "n": 12,
+     "front": "What is a build system compromise and its defenses?",
+     "back": "An attacker modifies software during the build, poisoning every downstream customer of a legitimately signed release. Defenses: hardened, access-controlled, monitored build infrastructure and reproducible builds.",
+     "q": "audio/d8/12-q.mp3",
+     "a": "audio/d8/12-a.mp3"
+    },
+    {
+     "n": 13,
+     "front": "What are reproducible builds?",
+     "back": "Independent builds that produce bit-identical artifacts, proving the build was not tampered with.",
+     "q": "audio/d8/13-q.mp3",
+     "a": "audio/d8/13-a.mp3"
+    },
+    {
+     "n": 14,
+     "front": "How are update mechanisms protected?",
+     "back": "Sign updates, verify signatures before install, and protect the signing keys, ideally in an HSM.",
+     "q": "audio/d8/14-q.mp3",
+     "a": "audio/d8/14-a.mp3"
+    },
+    {
+     "n": 15,
+     "front": "What vendor evidence supports a security assessment before purchase?",
+     "back": "Questionnaires, certifications like ISO 27001, SOC 2 reports, penetration test summaries, and evidence of secure development practices.",
+     "q": "audio/d8/15-q.mp3",
+     "a": "audio/d8/15-a.mp3"
+    },
+    {
+     "n": 16,
+     "front": "Name five contract clauses for supplier security.",
+     "back": "Security requirements compliance, right to audit, vulnerability disclosure and patching SLAs, breach notification timelines, data handling and return/destruction on exit (plus escrow and liability terms).",
+     "q": "audio/d8/16-q.mp3",
+     "a": "audio/d8/16-a.mp3"
+    },
+    {
+     "n": 17,
+     "front": "Why is vendor risk management continuous?",
+     "back": "Vendor posture changes: re-assess periodically and on triggers like a breach at the vendor, ownership change, or end-of-life announcements.",
+     "q": "audio/d8/17-q.mp3",
+     "a": "audio/d8/17-a.mp3"
+    },
+    {
+     "n": 18,
+     "front": "What is an exit strategy for a critical supplier?",
+     "back": "Knowing how to migrate off before you need to: data export, escrow, and alternative components identified in advance.",
+     "q": "audio/d8/18-q.mp3",
+     "a": "audio/d8/18-a.mp3"
+    }
+   ]
+  }
+ ]
+}

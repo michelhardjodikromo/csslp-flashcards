@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CSSLP Flashcards</title>
+  <meta name="description" content="Flip-card study deck for the ISC2 CSSLP exam, with narrated audio for every card." />
+  <meta name="theme-color" content="#0f7d8a" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <!-- iOS home-screen support: Safari ignores SVG apple-touch-icons and needs a PNG. -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="CSSLP" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="exam.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">CSSLP<span class="brand-sub">Flashcards</span></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.6rem">
+      <button class="exam-launch" data-exam-launch type="button">Exams</button>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch theme">
+        <span class="theme-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="domainTabs" class="tabs" aria-label="Domains"></nav>
+
+  <main class="stage">
+    <p id="domainName" class="domain-name"></p>
+
+    <div class="card-wrap">
+      <button id="card" class="card" type="button" aria-live="polite">
+        <div class="card-inner">
+          <div class="face face-front">
+            <span class="face-label">Question</span>
+            <p id="frontText" class="q-text"></p>
+            <span class="flip-hint">Tap to reveal</span>
+          </div>
+          <div class="face face-back">
+            <span class="face-label">Answer</span>
+            <p id="backText" class="a-text"></p>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <div class="playbar">
+      <button id="prevBtn" class="nav-btn" type="button" aria-label="Previous card">&larr;</button>
+
+      <button id="speakBtn" class="speak-btn" type="button" aria-label="Play audio">
+        <span class="speak-icon"></span>
+        <span id="speakLabel" class="speak-label">Play question</span>
+      </button>
+
+      <button id="nextBtn" class="nav-btn" type="button" aria-label="Next card">&rarr;</button>
+    </div>
+
+    <div class="meta">
+      <span id="counter" class="counter">1 / 1</span>
+      <div class="meta-toggles">
+        <button id="shuffleBtn" class="toggle-btn" type="button" aria-pressed="false">Shuffle</button>
+        <button id="autoBtn" class="toggle-btn" type="button" aria-pressed="false">Autoplay</button>
+      </div>
+    </div>
+
+    <div class="progress" aria-hidden="true"><div id="progressFill" class="progress-fill"></div></div>
+  </main>
+
+  <p id="status" class="status" role="status"></p>
+
+  <div id="examRoot" class="exam-root" hidden></div>
+
+  <script src="app.js"></script>
+  <script src="exam.js"></script>
+</body>
+</html>
