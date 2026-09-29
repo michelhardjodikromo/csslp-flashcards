@@ -4,7 +4,7 @@ A focused, offline-capable study app for the ISC2 **CSSLP** exam: flip cards wit
 narrated audio, plus practice exams — one deck and one question pool per domain.
 No accounts, no tracking, no build step.
 
-**280 cards** and **200 practice exam questions** across the 8 domains. The
+**280 cards** and **625 practice exam questions** across the 8 domains. The
 original 188 cards ship with pre-generated neural-voice audio for the question
 and the answer; for newer cards, run `python scripts/gen-audio.py` once to
 generate the missing audio (`pip install edge-tts` first).
@@ -20,8 +20,9 @@ generate the missing audio (`pip install edge-tts` first).
 
 ### Practice exams
 
-- **Domain quiz** — all 25 questions from that domain's pool, shuffled per attempt.
-- **Full mock exam** — 125 questions, 180 minutes, timed, 70% to pass.
+- **Domain quiz** — 25 questions drawn from that domain's pool.
+- **Five full mock exams** — 125 questions each, 180 minutes, timed, 70% to pass.
+  Together they cover the entire 625-question pool with no overlap between exams.
 - **Study mode vs exam mode** (quizzes) — study mode gives immediate feedback
   and a tip after each answer; exam mode withholds everything until the review
   screen. The mock exam always runs in exam mode.
@@ -40,18 +41,18 @@ generate the missing audio (`pip install edge-tts` first).
 
 | # | Domain | Cards | Exam pool |
 |---|--------|-------|-----------|
-| 1 | Secure Software Concepts | 51 | 25 |
-| 2 | Secure Software Lifecycle Management | 34 | 25 |
-| 3 | Secure Software Requirements | 31 | 25 |
-| 4 | Secure Software Architecture and Design | 37 | 25 |
-| 5 | Secure Software Implementation | 34 | 25 |
-| 6 | Secure Software Testing | 32 | 25 |
-| 7 | Secure Deployment, Operations, Maintenance | 31 | 25 |
-| 8 | Secure Software Supply Chain | 30 | 25 |
-| | **Total** | **280** | **200** |
+| 1 | Secure Software Concepts | 51 | 75 |
+| 2 | Secure Software Lifecycle Management | 34 | 70 |
+| 3 | Secure Software Requirements | 31 | 80 |
+| 4 | Secure Software Architecture and Design | 37 | 90 |
+| 5 | Secure Software Implementation | 34 | 90 |
+| 6 | Secure Software Testing | 32 | 85 |
+| 7 | Secure Deployment, Operations, Maintenance | 31 | 75 |
+| 8 | Secure Software Supply Chain | 30 | 60 |
+| | **Total** | **280** | **625** |
 
-The mock exam draws 125 questions from the 200-question pool, so repeat attempts
-are not identical.
+Each of the five mock exams is a fixed 125-question set (every 5th pool question
+per domain), so question order and answer options still reshuffle per attempt.
 
 ## Run locally
 
@@ -112,7 +113,7 @@ app.js                  web: flip / audio / autoplay / navigation
 exam.js                 quiz + mock exam engine (shared by web and APK)
 exam.css                exam UI styles (shared by web and APK)
 cards.json              the 280 cards + audio paths (source of truth)
-exams.json              the 120 exam questions + quiz/mock config (source of truth)
+exams.json              the 625 exam questions + quiz/mock config (source of truth)
 audio/d1..d8/*.mp3      narrated question (-q) and answer (-a) clips
 manifest.webmanifest    PWA metadata
 sw.js                   offline service worker (web)
@@ -129,7 +130,7 @@ scripts/sync-assets.mjs copies cards.json + audio/ + exam files into app/ for th
 {
   "passMark": 0.7,                        // 70% to pass
   "quiz":  { "count": 10 },               // questions per domain quiz
-  "mock":  { "count": 100, "minutes": 150 },
+  "mock":  { "count": 125, "minutes": 180 },
   "domains": [
     {
       "id": "d1", "num": 1, "name": "Secure Software Concepts",

@@ -1,7 +1,8 @@
 /* CSSLP exam engine — vanilla, no framework. Self-contained: it wires up any
    element with [data-exam-launch], renders into #examRoot, and hides the host
-   flashcard UI via body.exam-open. Question pools are sampled per attempt and
-   options are shuffled, so no two runs are identical. */
+   flashcard UI via body.exam-open. Five fixed mock exams split the question
+   pool between them (every 5th question per domain), so together they cover
+   every question; order and options are reshuffled per attempt. */
 (() => {
   'use strict';
 
@@ -56,7 +57,12 @@
         <span><span class="t">Domain ${d.num}: ${d.name}</span><br><span class="d">${d.pool.length} questions in pool</span></span>
         <span aria-hidden="true">›</span>
       </button>`).join('');
-    const mockCount = Math.min(data.mock.count, domains.reduce((n, d) => n + d.pool.length, 0));
+    const mockSize = (k) => domains.reduce((n, d) => n + d.pool.filter((_, i) => i % 5 === k).length, 0);
+    const mocks = [0, 1, 2, 3, 4].map((k) => `
+      <button class="exam-card mock" data-mock="${k}">
+        <span><span class="t">Mock exam ${k + 1}</span><br><span class="d">${mockSize(k)} questions · ${data.mock.minutes} min · timed · ${Math.round(data.passMark * 100)}% to pass</span></span>
+        <span aria-hidden="true">›</span>
+      </button>`).join('');
     shell(`
       <div class="exam-head">
         <button class="exam-close" data-close aria-label="Close exams">&times;</button>
@@ -64,7 +70,7 @@
       </div>
       <div class="exam-body">
         <p class="exam-home-title">Test yourself</p>
-        <p class="exam-home-sub">Questions are drawn from a larger pool and reshuffled every attempt, so each run is different.</p>
+        <p class="exam-home-sub">The five mock exams share out the whole question pool — no question repeats across them. Question order and answer options are reshuffled every attempt.</p>
         <div class="exam-moderow">
           <span>Quiz mode:</span>
           <span class="exam-seg-toggle">
@@ -73,10 +79,7 @@
           </span>
         </div>
         <div class="exam-list">
-          <button class="exam-card mock" data-mock>
-            <span><span class="t">Full mock exam</span><br><span class="d">${mockCount} questions · ${data.mock.minutes} min · timed · ${Math.round(data.passMark * 100)}% to pass</span></span>
-            <span aria-hidden="true">›</span>
-          </button>
+          ${mocks}
           ${quizzes}
         </div>
       </div>`);
@@ -90,12 +93,11 @@
     run = { type: 'quiz', mode: studyMode ? 'study' : 'exam', title: `Domain ${d.num} quiz`, questions, pos: 0, endsAt: 0 };
     renderQuestion();
   }
-  function startMock() {
+  function startMock(k) {
     const all = [];
-    data.domains.forEach((d) => d.pool.forEach((s) => all.push([s, d])));
-    const n = Math.min(data.mock.count, all.length);
-    const questions = shuffle(all).slice(0, n).map(([s, d]) => prep(s, d));
-    run = { type: 'mock', mode: 'exam', title: 'Full mock exam', questions, pos: 0, endsAt: Date.now() + data.mock.minutes * 60000 };
+    data.domains.forEach((d) => d.pool.forEach((s, i) => { if (i % 5 === k) all.push([s, d]); }));
+    const questions = shuffle(all).map(([s, d]) => prep(s, d));
+    run = { type: 'mock', mode: 'exam', title: `Mock exam ${k + 1}`, questions, pos: 0, endsAt: Date.now() + data.mock.minutes * 60000 };
     startTimer();
     renderQuestion();
   }
@@ -264,7 +266,7 @@
     if (t.dataset.close !== undefined) return close();
     if (t.dataset.mode) { studyMode = t.dataset.mode === 'study'; return home(); }
     if (t.dataset.quiz) return startQuiz(t.dataset.quiz);
-    if (t.dataset.mock !== undefined) return startMock();
+    if (t.dataset.mock !== undefined) return startMock(Number(t.dataset.mock));
     if (t.dataset.opt !== undefined) return selectOption(Number(t.dataset.opt));
     if (t.dataset.check !== undefined) { run.questions[run.pos].answered = true; return renderQuestion(); }
     if (t.dataset.next !== undefined) {
@@ -299,7 +301,7 @@
       bar.addEventListener('click', (e) => {
         if (e.target.closest('[data-prompt-start]')) {
           localStorage.setItem('csslp.mockprompt', 'done'); bar.remove();
-          document.body.classList.add('exam-open'); root.hidden = false; startMock();
+          document.body.classList.add('exam-open'); root.hidden = false; startMock(Math.floor(Math.random() * 5));
         } else if (e.target.closest('[data-prompt-dismiss]')) {
           localStorage.setItem('csslp.mockprompt', 'dismissed'); bar.remove();
         }
