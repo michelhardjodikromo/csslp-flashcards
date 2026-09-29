@@ -20,7 +20,7 @@ generate the missing audio (`pip install edge-tts` first).
 
 ### Practice exams
 
-- **Domain quiz** — 10 questions drawn from that domain's pool.
+- **Domain quiz** — all 25 questions from that domain's pool, shuffled per attempt.
 - **Full mock exam** — 125 questions, 180 minutes, timed, 70% to pass.
 - **Study mode vs exam mode** (quizzes) — study mode gives immediate feedback
   and a tip after each answer; exam mode withholds everything until the review
