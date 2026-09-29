@@ -5,8 +5,8 @@
   "count": 10
  },
  "mock": {
-  "count": 100,
-  "minutes": 150
+  "count": 125,
+  "minutes": 180
  },
  "domains": [
   {
