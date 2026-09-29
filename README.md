@@ -4,7 +4,7 @@ A focused, offline-capable study app for the ISC2 **CSSLP** exam: flip cards wit
 narrated audio, plus practice exams — one deck and one question pool per domain.
 No accounts, no tracking, no build step.
 
-**280 cards** and **120 practice exam questions** across the 8 domains. The
+**280 cards** and **200 practice exam questions** across the 8 domains. The
 original 188 cards ship with pre-generated neural-voice audio for the question
 and the answer; for newer cards, run `python scripts/gen-audio.py` once to
 generate the missing audio (`pip install edge-tts` first).
@@ -40,17 +40,17 @@ generate the missing audio (`pip install edge-tts` first).
 
 | # | Domain | Cards | Exam pool |
 |---|--------|-------|-----------|
-| 1 | Secure Software Concepts | 51 | 15 |
-| 2 | Secure Software Lifecycle Management | 34 | 15 |
-| 3 | Secure Software Requirements | 31 | 15 |
-| 4 | Secure Software Architecture and Design | 37 | 15 |
-| 5 | Secure Software Implementation | 34 | 15 |
-| 6 | Secure Software Testing | 32 | 15 |
-| 7 | Secure Deployment, Operations, Maintenance | 31 | 15 |
-| 8 | Secure Software Supply Chain | 30 | 15 |
-| | **Total** | **280** | **120** |
+| 1 | Secure Software Concepts | 51 | 25 |
+| 2 | Secure Software Lifecycle Management | 34 | 25 |
+| 3 | Secure Software Requirements | 31 | 25 |
+| 4 | Secure Software Architecture and Design | 37 | 25 |
+| 5 | Secure Software Implementation | 34 | 25 |
+| 6 | Secure Software Testing | 32 | 25 |
+| 7 | Secure Deployment, Operations, Maintenance | 31 | 25 |
+| 8 | Secure Software Supply Chain | 30 | 25 |
+| | **Total** | **280** | **200** |
 
-The mock exam draws 100 questions from the 120-question pool, so repeat attempts
+The mock exam draws 100 questions from the 200-question pool, so repeat attempts
 are not identical.
 
 ## Run locally
