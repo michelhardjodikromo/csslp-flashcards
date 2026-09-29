@@ -4,8 +4,10 @@ A focused, offline-capable study app for the ISC2 **CSSLP** exam: flip cards wit
 narrated audio, plus practice exams — one deck and one question pool per domain.
 No accounts, no tracking, no build step.
 
-**188 cards** (each with pre-generated neural-voice audio for the question and
-the answer) and **120 practice exam questions** across the 8 domains.
+**280 cards** and **120 practice exam questions** across the 8 domains. The
+original 188 cards ship with pre-generated neural-voice audio for the question
+and the answer; for newer cards, run `python scripts/gen-audio.py` once to
+generate the missing audio (`pip install edge-tts` first).
 
 ## Features
 
@@ -38,15 +40,15 @@ the answer) and **120 practice exam questions** across the 8 domains.
 
 | # | Domain | Cards | Exam pool |
 |---|--------|-------|-----------|
-| 1 | Secure Software Concepts | 40 | 15 |
-| 2 | Secure Software Lifecycle Management | 20 | 15 |
-| 3 | Secure Software Requirements | 20 | 15 |
-| 4 | Secure Software Architecture and Design | 26 | 15 |
-| 5 | Secure Software Implementation | 25 | 15 |
-| 6 | Secure Software Testing | 20 | 15 |
-| 7 | Secure Deployment, Operations, Maintenance | 19 | 15 |
-| 8 | Secure Software Supply Chain | 18 | 15 |
-| | **Total** | **188** | **120** |
+| 1 | Secure Software Concepts | 51 | 15 |
+| 2 | Secure Software Lifecycle Management | 34 | 15 |
+| 3 | Secure Software Requirements | 31 | 15 |
+| 4 | Secure Software Architecture and Design | 37 | 15 |
+| 5 | Secure Software Implementation | 34 | 15 |
+| 6 | Secure Software Testing | 32 | 15 |
+| 7 | Secure Deployment, Operations, Maintenance | 31 | 15 |
+| 8 | Secure Software Supply Chain | 30 | 15 |
+| | **Total** | **280** | **120** |
 
 The mock exam draws 100 questions from the 120-question pool, so repeat attempts
 are not identical.
@@ -109,7 +111,7 @@ styles.css              web design system (teal on slate, light/dark)
 app.js                  web: flip / audio / autoplay / navigation
 exam.js                 quiz + mock exam engine (shared by web and APK)
 exam.css                exam UI styles (shared by web and APK)
-cards.json              the 188 cards + audio paths (source of truth)
+cards.json              the 280 cards + audio paths (source of truth)
 exams.json              the 120 exam questions + quiz/mock config (source of truth)
 audio/d1..d8/*.mp3      narrated question (-q) and answer (-a) clips
 manifest.webmanifest    PWA metadata

@@ -2,7 +2,7 @@
    Strategy: audio is cache-first (big, immutable, keep offline once played);
    everything else (HTML, JS, CSS, JSON) is network-first so new deploys show
    immediately when online and still work offline from cache. */
-const VERSION = 'csslp-v4';
+const VERSION = 'csslp-v5';
 const SHELL = [
   './',
   'index.html',

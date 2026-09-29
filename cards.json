@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-23",
- "total": 188,
+ "generated": "2026-09-29",
+ "total": 280,
  "domains": [
   {
    "id": "d1",
@@ -286,6 +286,83 @@
      "back": "Clark-Wilson: integrity through well-formed transactions and separation of duties. Brewer-Nash (Chinese Wall): prevents conflicts of interest across competing clients’ data.",
      "q": "audio/d1/40-q.mp3",
      "a": "audio/d1/40-a.mp3"
+    },
+    {
+     "n": 41,
+     "front": "What are the Three Rs of secure software?",
+     "back": "Reliability: the software behaves as expected. Resiliency: it holds up under misuse and attack. Recoverability: normal business operation can be restored quickly with minimal disruption after a failure.",
+     "q": "audio/d1/41-q.mp3",
+     "a": "audio/d1/41-a.mp3"
+    },
+    {
+     "n": 42,
+     "front": "What is the DAD triad and how does it map to CIA?",
+     "back": "DAD names the anti-goals of security: Disclosure defeats confidentiality, Alteration defeats integrity, and Destruction defeats availability. Each CIA objective counters its DAD opposite.",
+     "q": "audio/d1/42-q.mp3",
+     "a": "audio/d1/42-a.mp3"
+    },
+    {
+     "n": 43,
+     "front": "In federated identity, what roles do the identity provider and the relying party play?",
+     "back": "The identity provider stores identities, authenticates users, and issues tokens. The relying party (the service provider) consumes those tokens and enforces authorization near the resource. Tokens issued in one domain can be accepted in another.",
+     "q": "audio/d1/43-q.mp3",
+     "a": "audio/d1/43-a.mp3"
+    },
+    {
+     "n": 44,
+     "front": "Distinguish SAML 2.0, OAuth 2.0, and OpenID Connect.",
+     "back": "SAML 2.0 exchanges XML-based security assertions between trust domains. OAuth 2.0 (RFC 6749) is an authorization framework letting a third-party app get limited access to an HTTP service. OpenID Connect adds user authentication on top of OAuth 2.0 using JSON/REST.",
+     "q": "audio/d1/44-q.mp3",
+     "a": "audio/d1/44-a.mp3"
+    },
+    {
+     "n": 45,
+     "front": "Name the three components of a Zero Trust architecture and their jobs.",
+     "back": "The policy engine makes the allow/deny decision; the policy administrator establishes or shuts down the access path (the control plane); the policy enforcement point starts, ends, and monitors the actual connections between subject and resource.",
+     "q": "audio/d1/45-q.mp3",
+     "a": "audio/d1/45-a.mp3"
+    },
+    {
+     "n": 46,
+     "front": "What does Kerckhoffs's principle state?",
+     "back": "A cryptographic system should stay secure even if everything about it except the key is public knowledge. Security must rest on key secrecy, not on hiding the algorithm or design.",
+     "q": "audio/d1/46-q.mp3",
+     "a": "audio/d1/46-a.mp3"
+    },
+    {
+     "n": 47,
+     "front": "What are split knowledge and secret sharing?",
+     "back": "Split knowledge divides a cryptographic key into multiple components, none of which reveals the original, so several parties must combine them to rebuild it. Secret sharing distributes such fragments across many nodes so compromising one node cannot recover the secret.",
+     "q": "audio/d1/47-q.mp3",
+     "a": "audio/d1/47-a.mp3"
+    },
+    {
+     "n": 48,
+     "front": "What is work factor in security?",
+     "back": "The amount of effort or time an attacker needs to defeat a protective measure, typically measured as elapsed time to break a cryptographic system. Encryption aims to make the work factor high enough to deter adversaries.",
+     "q": "audio/d1/48-q.mp3",
+     "a": "audio/d1/48-a.mp3"
+    },
+    {
+     "n": 49,
+     "front": "What is the Trusted Computing Base, and how does a TPM support it?",
+     "back": "The TCB is the total set of hardware, software, firmware, and processes that enforce a system's security policy; if it is compromised, the policy can no longer be trusted. A TPM is a dedicated microcontroller whose keys can attest to boot integrity, as BitLocker does.",
+     "q": "audio/d1/49-q.mp3",
+     "a": "audio/d1/49-a.mp3"
+    },
+    {
+     "n": 50,
+     "front": "What are the three elements of GRC?",
+     "back": "Governance sets the policies and procedures that steer the business toward its goals. Risk management identifies risks and reduces them to an acceptable level. Compliance identifies and satisfies the laws and regulations that apply to the organization.",
+     "q": "audio/d1/50-q.mp3",
+     "a": "audio/d1/50-a.mp3"
+    },
+    {
+     "n": 51,
+     "front": "What is the Modular Open Systems Approach (MOSA)?",
+     "back": "A technical and business strategy for building adaptable systems in which the major interfaces are modular and use widely supported standards. Those standards must enable interoperability, scalability, and portability, allowing components to be swapped.",
+     "q": "audio/d1/51-q.mp3",
+     "a": "audio/d1/51-a.mp3"
     }
    ]
   },
@@ -433,6 +510,104 @@
      "back": "Source code held by a neutral third party and released to the customer if the vendor fails; a continuity control agreed in contracts.",
      "q": "audio/d2/20-q.mp3",
      "a": "audio/d2/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "In the Seven Touchpoints of Secure Software, which touchpoint is ranked highest, and what does the numbering mean?",
+     "back": "Code review is ranked first and security operations last. The numbers rank each practice by its value for improving software security, not by chronological order - e.g., architectural risk analysis may happen before code review.",
+     "q": "audio/d2/21-q.mp3",
+     "a": "audio/d2/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "What distinguishes CIS Benchmark Level 1 profiles from Level 2 profiles?",
+     "back": "Level 1 is a base hardening set that lowers attack surface quickly with little performance impact and without breaking business functionality. Level 2 adds defense in depth for security-critical environments but can disrupt operations if applied without care.",
+     "q": "audio/d2/22-q.mp3",
+     "a": "audio/d2/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "What do the three DoD STIG severity categories represent?",
+     "back": "Category I covers weaknesses whose exploitation causes loss of CIA and can mean mission failure or loss of life or facility. Category II may result in loss of CIA (mission degradation). Category III degrades the measures protecting CIA. CAT I is most severe.",
+     "q": "audio/d2/23-q.mp3",
+     "a": "audio/d2/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "What problem does the Security Content Automation Protocol (SCAP) solve?",
+     "back": "SCAP standardizes the format for expressing software flaw and secure-configuration data so compliance checking can be automated. With hundreds of STIGs each holding many findings, manual checking is infeasible; tools like Red Hat's OpenSCAP automate it.",
+     "q": "audio/d2/24-q.mp3",
+     "a": "audio/d2/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "How does a CVE differ from a CWE?",
+     "back": "A CVE identifies one publicly disclosed vulnerability in a specific product and version (e.g., a Log4j2 flaw), cataloged in the NVD. A CWE names a general class of coding weakness, such as improper input validation, that can give rise to many CVEs.",
+     "q": "audio/d2/25-q.mp3",
+     "a": "audio/d2/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "Which scoring systems rate the severity of CVEs and CWEs, and on what scales?",
+     "back": "CVSS scores CVEs from 0 to 10; v3 adds a Critical band at 9.0-10.0 above High. CWSS scores CWEs from 0 to 100, typically assigned via static analysis before production to prioritize fixing poor coding practices.",
+     "q": "audio/d2/26-q.mp3",
+     "a": "audio/d2/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What are the four business functions of OWASP SAMM, and how is the model structured under them?",
+     "back": "Governance, Construction, Verification, and Operation. Each function holds three security practices (12 in total), and every practice defines three maturity levels plus an implicit level 0 starting point of unfulfilled practice.",
+     "q": "audio/d2/27-q.mp3",
+     "a": "audio/d2/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "Name the four domains of BSIMM.",
+     "back": "Governance, Intelligence, SSDL Touchpoints, and Deployment. They organize 12 practices and roughly 119 activities, drawn from observed data across the 120+ participating firms, making BSIMM descriptive rather than prescriptive.",
+     "q": "audio/d2/28-q.mp3",
+     "a": "audio/d2/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "What is the OWASP DevSecOps Maturity Model (DSOMM), and how many maturity levels does it define?",
+     "back": "An OWASP model for maturing security within the DevSecOps pipeline. It frames pipeline phases as dimensions and subdimensions and rates each across five levels, from basic understanding of security practices up to advanced deployment at scale.",
+     "q": "audio/d2/29-q.mp3",
+     "a": "audio/d2/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "What are the three CMMC 2.0 levels, and which NIST publications do the upper levels align with?",
+     "back": "Level 1 Foundational uses annual self-assessment; Level 2 Advanced aligns with NIST SP 800-171 protection requirements; Level 3 Expert adds NIST SP 800-172 enhancements. It applies to DoD contractors handling sensitive unclassified information.",
+     "q": "audio/d2/30-q.mp3",
+     "a": "audio/d2/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "How do KPIs and KRIs differ as categories of security metrics?",
+     "back": "KPIs measure progress toward business goals and objectives, so security KPIs track goal performance. KRIs are forward-looking risk monitors with predefined thresholds, set by risk tolerance, that alert stakeholders when a risk level is reached.",
+     "q": "audio/d2/31-q.mp3",
+     "a": "audio/d2/31-a.mp3"
+    },
+    {
+     "n": 32,
+     "front": "What does cyclomatic complexity measure, and which score range is considered low risk?",
+     "back": "It counts the linearly independent execution paths through a code section; code with no branching scores 1. Scores of 1-10 are simple and low risk, while values above 50 are considered untestable and very high risk.",
+     "q": "audio/d2/32-q.mp3",
+     "a": "audio/d2/32-a.mp3"
+    },
+    {
+     "n": 33,
+     "front": "Per NIST SP 800-160, how does verification differ from validation?",
+     "back": "Verification produces objective evidence that the system satisfies its stated security requirements - it was built right. Validation confirms the system fulfills its intended use and mission in its operational environment - the right thing was built.",
+     "q": "audio/d2/33-q.mp3",
+     "a": "audio/d2/33-a.mp3"
+    },
+    {
+     "n": 34,
+     "front": "What are the four classic risk-handling strategies, and what does ISO/IEC 27005 rename them?",
+     "back": "Mitigate, accept, transfer, and avoid; ISO/IEC 27005 calls them modification, retention, sharing, and avoidance. Avoiding risk (e.g., replacing vulnerable software) is legitimate, but simply ignoring risk is never acceptable.",
+     "q": "audio/d2/34-q.mp3",
+     "a": "audio/d2/34-a.mp3"
     }
    ]
   },
@@ -580,6 +755,83 @@
      "back": "When it passes the acceptance criteria and security tests derived from it, like any other requirement.",
      "q": "audio/d3/20-q.mp3",
      "a": "audio/d3/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "What are the three tiers at which requirements are managed, and which tier do software requirements sit in?",
+     "back": "Organizational (long-term strategic), business (mid-term, business-function level), and technical (immediately implementable). Software security requirements live at the technical tier, split into functional and nonfunctional requirements plus use and abuse cases.",
+     "q": "audio/d3/21-q.mp3",
+     "a": "audio/d3/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "What does the INVEST acronym describe for Agile user stories?",
+     "back": "Qualities of a good user story: Independent (deliverable in any order), Negotiable (details worked out during development), Valuable (to users), Estimable (effort can be sized), Small (buildable in days), and Testable (verifiable by tests).",
+     "q": "audio/d3/22-q.mp3",
+     "a": "audio/d3/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "How do standards, baselines, procedures, and guidelines each support a security policy?",
+     "back": "Standards are mandatory rules or mechanisms chosen for org-wide use. Baselines set a minimum security level every system must meet. Procedures give step-by-step implementation instructions. Guidelines are optional recommended practices.",
+     "q": "audio/d3/23-q.mp3",
+     "a": "audio/d3/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "Describe the policy decomposition process for deriving software security requirements.",
+     "back": "High-level policy statements are mapped to security objectives; objectives yield general security requirements; those are then refined into concrete software security requirements that developers can implement.",
+     "q": "audio/d3/24-q.mp3",
+     "a": "audio/d3/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "What three rules must financial institutions address to comply with GLBA?",
+     "back": "The Financial Privacy Rule (give customers notices explaining data collection and sharing), the Safeguards Rule (design and maintain protections for consumer data), and the Pretexting Provisions (block obtaining financial data under false pretenses).",
+     "q": "audio/d3/25-q.mp3",
+     "a": "audio/d3/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "What is the difference between a security label and a security marking?",
+     "back": "A label binds security attributes to an information object inside an IT system as part of its data structure (machine-readable). A marking presents those attributes in human-readable form, such as classifications printed on hard copies, to support policy enforcement by people.",
+     "q": "audio/d3/26-q.mp3",
+     "a": "audio/d3/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "Distinguish structured, unstructured, and semistructured data.",
+     "back": "Structured data fits a predefined model and is managed in databases such as SQL. Unstructured data (the majority of all data) has no predefined model and needs tools like NoSQL. Semistructured data uses metadata formats such as JSON, XML, or CSV to aid cataloging.",
+     "q": "audio/d3/27-q.mp3",
+     "a": "audio/d3/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "Name and briefly define four data anonymization techniques.",
+     "back": "Replacement substitutes identifying values; suppression omits PII from the released data; generalization swaps specific values for broader ones (full birthdate to birth year); perturbation applies random changes. Linking to other datasets can still re-identify people.",
+     "q": "audio/d3/28-q.mp3",
+     "a": "audio/d3/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "What is CAPEC and how does it help when developing misuse cases?",
+     "back": "Common Attack Pattern Enumeration and Classification, a public catalog of known attack patterns developed by the US DHS, organized by attack mechanism or domain. Knowledge of these patterns lets teams derive realistic attacker interactions when writing misuse cases.",
+     "q": "audio/d3/29-q.mp3",
+     "a": "audio/d3/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "What are the three types of traceability in a Security Requirements Traceability Matrix (SRTM)?",
+     "back": "Forward traceability maps requirements to test cases; backward (reverse) traceability maps test cases back to requirements; bidirectional traceability maps in both directions.",
+     "q": "audio/d3/30-q.mp3",
+     "a": "audio/d3/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "How do organizations extend security requirements beyond their direct (third-party) suppliers?",
+     "back": "They require each third-party supplier to provide assurance, often via legal indemnification, that any fourth-party supplier meets or exceeds the same security requirements imposed on the supplier itself, securing the whole supply chain.",
+     "q": "audio/d3/31-q.mp3",
+     "a": "audio/d3/31-a.mp3"
     }
    ]
   },
@@ -769,6 +1021,83 @@
      "back": "Unvetted cryptography almost always contains subtle flaws; use standardized, battle-tested algorithms and libraries.",
      "q": "audio/d4/26-q.mp3",
      "a": "audio/d4/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What is the Zachman Framework and how is it structured?",
+     "back": "An enterprise architecture classification model arranged as a 6x6 matrix (36 cells). Columns ask what, how, where, who, when, and why; rows are perspectives from planner and owner down through designer, implementer, subconstructor, and user.",
+     "q": "audio/d4/27-q.mp3",
+     "a": "audio/d4/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "What is SABSA and what are its six architecture layers?",
+     "back": "A risk-driven enterprise security architecture framework similar in structure to Zachman. Its layers are contextual, conceptual, logical, physical, component, and operational/management, each tied to a stakeholder perspective from business owner to manager.",
+     "q": "audio/d4/28-q.mp3",
+     "a": "audio/d4/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "SOAP vs REST: what is the core distinction between them?",
+     "back": "SOAP is a protocol that strictly requires XML for message transport. REST is an architectural style, not a protocol, and supports multiple data formats such as JSON, enabling faster and more lightweight web services.",
+     "q": "audio/d4/29-q.mp3",
+     "a": "audio/d4/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "What weakness of certificate revocation lists (CRLs) does OCSP address?",
+     "back": "CRLs can grow long, are slow to process, and may be stale. The Online Certificate Status Protocol lets a relying party check a single certificate's revocation status on demand, avoiding those shortcomings.",
+     "q": "audio/d4/30-q.mp3",
+     "a": "audio/d4/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "Distinguish Type 1 and Type 2 hypervisors.",
+     "back": "A Type 1 (bare-metal, native, embedded) hypervisor runs directly on host hardware and manages guest OSs above it. A Type 2 hypervisor installs on top of a conventional host operating system and depends entirely on that OS to operate.",
+     "q": "audio/d4/31-q.mp3",
+     "a": "audio/d4/31-a.mp3"
+    },
+    {
+     "n": 32,
+     "front": "How does isolation differ between virtual machines and containers?",
+     "back": "A hypervisor gives each VM hardware-level isolation with its own virtual hardware and full guest OS, so different OS families can share one host. Containers share the host's OS kernel with segregation between apps, so they are tied to one OS family.",
+     "q": "audio/d4/32-q.mp3",
+     "a": "audio/d4/32-a.mp3"
+    },
+    {
+     "n": 33,
+     "front": "What is a side-channel attack and how do cryptographic modules defend against it?",
+     "back": "An attack extracting secrets like keys from a device's physical leakage - timing, power draw, electromagnetic or acoustic emissions - without hacking the device itself. Defenses include constant execution time and stabilized signatures for sensitive operations; FIPS 140 testing covers these noninvasive attacks.",
+     "q": "audio/d4/33-q.mp3",
+     "a": "audio/d4/33-a.mp3"
+    },
+    {
+     "n": 34,
+     "front": "In threat modeling, what is distinctive about the Trike methodology?",
+     "back": "Trike is requirements-driven: it builds a requirements model that ensures the risk level assigned to each asset is explicitly accepted as tolerable by the system's stakeholders.",
+     "q": "audio/d4/34-q.mp3",
+     "a": "audio/d4/34-a.mp3"
+    },
+    {
+     "n": 35,
+     "front": "What two overarching risks must developers always weigh for applications running in the cloud?",
+     "back": "Multitenancy (sharing infrastructure with other customers) and third-party administration (the provider, not you, administers the underlying environment). Both shape the security requirements for any cloud deployment and service model.",
+     "q": "audio/d4/35-q.mp3",
+     "a": "audio/d4/35-a.mp3"
+    },
+    {
+     "n": 36,
+     "front": "What is a community cloud and when is it a good fit?",
+     "back": "A multitenant cloud whose tenants share similar needs and concerns, such as common compliance obligations. It suits regulated sectors like government and healthcare, costing more than public cloud but less than private cloud.",
+     "q": "audio/d4/36-q.mp3",
+     "a": "audio/d4/36-a.mp3"
+    },
+    {
+     "n": 37,
+     "front": "Which security objectives take priority in ICS/SCADA environments, and why?",
+     "back": "Availability is generally the prime objective because operations are time-critical, with human safety as another paramount concern. Connecting once-proprietary control systems to office networks and the internet has made them far more exposed to attack.",
+     "q": "audio/d4/37-q.mp3",
+     "a": "audio/d4/37-a.mp3"
     }
    ]
   },
@@ -951,6 +1280,69 @@
      "back": "Trusting hidden fields, client-set headers, or \"internal\" traffic without verification. Verify everything crossing a trust boundary.",
      "q": "audio/d5/25-q.mp3",
      "a": "audio/d5/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "How does declarative security differ from programmatic (imperative) security?",
+     "back": "Declarative security is set through configuration or annotations (e.g., J2EE descriptors) and enforced by the container, so changes need no code edits. Programmatic security is written into the application code itself: harder to change, but that rigidity protects configuration integrity.",
+     "q": "audio/d5/26-q.mp3",
+     "a": "audio/d5/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What is type safety, and which common languages are type safe vs type unsafe?",
+     "back": "Type safety is a language's ability to prevent errors from operations on the wrong data type, enforced at compile time, at runtime, or both. Java, .NET, and Ada are type safe; C and C++ are not, which contributes to their memory-corruption risks.",
+     "q": "audio/d5/27-q.mp3",
+     "a": "audio/d5/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "Which risk tops the OWASP Top 10 (2021), and which two categories were new that year?",
+     "back": "Broken Access Control ranked first, with the most mapped CWEs. Insecure Design and Software and Data Integrity Failures (covering unverified updates and CI/CD pipelines) were both new in 2021; XSS was folded into Injection and XXE into Security Misconfiguration.",
+     "q": "audio/d5/28-q.mp3",
+     "a": "audio/d5/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "How do the OWASP Proactive Controls differ from the OWASP Top 10?",
+     "back": "The Top 10 is a risk-focused awareness list of the most critical web application threats. The Proactive Controls are the defensive counterpart: ten prioritized techniques for developers (define security requirements, validate inputs, encode data, etc.) that map back to Top 10 risks.",
+     "q": "audio/d5/29-q.mp3",
+     "a": "audio/d5/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "What is tokenization, and how do reversible and irreversible tokens differ?",
+     "back": "Tokenization swaps sensitive data (like a card number) for a nonsensitive substitute, keeping the real value in a secure vault; it supports PCI DSS compliance. Reversible tokens can be converted back to the original data; irreversible tokens cannot.",
+     "q": "audio/d5/30-q.mp3",
+     "a": "audio/d5/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "In OWASP terms, what distinguishes output encoding from escaping?",
+     "back": "Both defend against injection. Encoding translates special characters into an equivalent form that is harmless to the target interpreter, while escaping prefixes a character with a special marker so it is not misinterpreted as syntax.",
+     "q": "audio/d5/31-q.mp3",
+     "a": "audio/d5/31-a.mp3"
+    },
+    {
+     "n": 32,
+     "front": "What is cryptographic agility and what is its main drawback?",
+     "back": "It is a system's capacity to swap cryptographic algorithms, key sizes, or providers easily when one is broken or deprecated (X.509's support for multiple algorithms is an example). The drawback is added complexity, which can itself introduce vulnerabilities if implemented poorly.",
+     "q": "audio/d5/32-q.mp3",
+     "a": "audio/d5/32-a.mp3"
+    },
+    {
+     "n": 33,
+     "front": "What is a logic bomb, and how does it differ from a maintenance hook (backdoor)?",
+     "back": "A logic bomb is hidden malicious code that activates when a specific event or condition occurs, typically planted by an insider. A maintenance hook is a reentry mechanism developers add deliberately or by mistake; it may serve a legitimate purpose but becomes a backdoor if left in place.",
+     "q": "audio/d5/33-q.mp3",
+     "a": "audio/d5/33-a.mp3"
+    },
+    {
+     "n": 34,
+     "front": "What assurances does code signing provide and how does it work?",
+     "back": "Code signing digitally signs executables or scripts, typically with an object signing certificate, to prove the software's origin (authenticity) and that it has not been altered (integrity). Its security depends on protecting the private signing key.",
+     "q": "audio/d5/34-q.mp3",
+     "a": "audio/d5/34-a.mp3"
     }
    ]
   },
@@ -1098,6 +1490,90 @@
      "back": "Coverage measures what tests execute, not what they assert; weak assertions pass over real defects.",
      "q": "audio/d6/20-q.mp3",
      "a": "audio/d6/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "What are the five phases of a typical penetration test methodology?",
+     "back": "Planning, discovery, vulnerability mapping, attack, and reporting. Planning sets rules of engagement and goals with no actual testing; discovery gathers information and scans; mapping matches findings to known vulnerabilities; attack attempts exploitation; reporting runs throughout.",
+     "q": "audio/d6/21-q.mp3",
+     "a": "audio/d6/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "In a penetration test, what does a failed exploit attempt prove about the targeted vulnerability?",
+     "back": "Nothing conclusive. A successful attack verifies the vulnerability exists, but an unsuccessful attempt does not mean the vulnerability is unexploitable; the tester should move on and try other identified weaknesses.",
+     "q": "audio/d6/22-q.mp3",
+     "a": "audio/d6/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "What are the two main practical challenges of fuzz testing?",
+     "back": "Setup and data analysis. Fuzzing usually needs a special test harness to run, and it is noisy, producing large volumes of output that often contain many false positives requiring review.",
+     "q": "audio/d6/23-q.mp3",
+     "a": "audio/d6/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "How do volume, load, and stress testing differ?",
+     "back": "Volume testing uses very large amounts of data; load testing uses a large number of concurrent users; stress testing deliberately pushes beyond normal capacity, possibly to a breaking point, with both excessive users and data, to observe behavior under failure conditions.",
+     "q": "audio/d6/24-q.mp3",
+     "a": "audio/d6/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "In security test results, what are Type I and Type II errors, and which is worse?",
+     "back": "A Type I error is a false positive (a reported issue that is not real); a Type II error is a false negative (a real defect the test missed). Type II is generally worse because you cannot fix an issue you never see; alternate tools can help detect them.",
+     "q": "audio/d6/25-q.mp3",
+     "a": "audio/d6/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "Accuracy vs precision in test results?",
+     "back": "Accuracy is how close a measurement is to the true or correct value; precision is how closely repeated results cluster together. A tool can consistently report the same wrong finding (precise but not accurate) or vice versa.",
+     "q": "audio/d6/26-q.mp3",
+     "a": "audio/d6/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What is a test harness and what benefits does it provide?",
+     "back": "A collection of drivers, stubs, and supporting tools used to automate test execution. It enables scheduled runs, simulates conditions hard to create manually, feeds inputs to the software under test, captures outputs, and supports debugging.",
+     "q": "audio/d6/27-q.mp3",
+     "a": "audio/d6/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "What are the three OWASP ASVS verification levels and when does each apply?",
+     "back": "Level 1: baseline defense against easily found issues like the OWASP Top 10, the minimum for all apps. Level 2 (Standard): defends against most current risks; fits apps handling sensitive or B2B data such as healthcare. Level 3: highest assurance, for military, safety, and critical infrastructure.",
+     "q": "audio/d6/28-q.mp3",
+     "a": "audio/d6/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "What is the Common Criteria (ISO/IEC 15408) and what do its EALs indicate?",
+     "back": "An international framework for specifying and evaluating the security of IT products such as operating systems and TPM chips. Products earn Evaluation Assurance Levels from EAL1 to EAL7, giving buyers confidence a product meets their requirements against a chosen protection profile.",
+     "q": "audio/d6/29-q.mp3",
+     "a": "audio/d6/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "How do alpha testing and beta testing differ?",
+     "back": "Alpha testing happens when development finishes and is run by internal staff who were not directly involved in building the software. Beta testing follows alpha and is performed by a sample of the actual intended users, such as customers, before public release.",
+     "q": "audio/d6/30-q.mp3",
+     "a": "audio/d6/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "Passive vs active synthetic transactions in testing production systems?",
+     "back": "Both are dummy transactions used only to exercise the system. Passive ones leave no residual impact, like a status query for a fake customer. Active ones are actually processed and stored, like a dummy order, so safeguards must stop downstream effects such as shipping or financial postings.",
+     "q": "audio/d6/31-q.mp3",
+     "a": "audio/d6/31-a.mp3"
+    },
+    {
+     "n": 32,
+     "front": "Why is independent verification and validation (IV&V) by a third party valued?",
+     "back": "Lack of bias makes the results more credible, objective, and neutral, and specialized test labs can shorten testing time. It helps validate vendor claims, supports compliance oversight, and may itself be a compliance requirement, especially for purchased software.",
+     "q": "audio/d6/32-q.mp3",
+     "a": "audio/d6/32-a.mp3"
     }
    ]
   },
@@ -1238,6 +1714,90 @@
      "back": "Plan migration before support ends, then decommission formally: revoke access and keys, sanitize media, update inventories.",
      "q": "audio/d7/19-q.mp3",
      "a": "audio/d7/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "What is Maximum Tolerable Downtime (MTD) and how does it relate to RTO?",
+     "back": "MTD is the total outage duration a business process can suffer before the mission is significantly harmed. RTO is the maximum time a system resource may stay unavailable, and it must fit within the MTD so that recovery finishes before intolerable damage occurs.",
+     "q": "audio/d7/20-q.mp3",
+     "a": "audio/d7/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "Distinguish an incident precursor from an indicator.",
+     "back": "A precursor signals an incident may happen in the future, such as log entries showing a vulnerability scanner probing a web server. An indicator signals an incident is occurring or already occurred, such as an antivirus alert on an infected host.",
+     "q": "audio/d7/21-q.mp3",
+     "a": "audio/d7/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "How does an IDS differ from an IPS?",
+     "back": "An IDS is passive: it detects suspicious activity and alerts administrators, like a warning light. An IPS adds active response, automatically blocking traffic or changing configurations to stop an attack in progress, like an airbag deploying.",
+     "q": "audio/d7/22-q.mp3",
+     "a": "audio/d7/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "How do a WAF and RASP differ in where and how they protect an application?",
+     "back": "A WAF filters HTTP traffic at the perimeter before it reaches the app, so it fails if an attacker takes another network path. RASP runs inside the application itself, using runtime context to block exploits regardless of path. They are complementary, not substitutes.",
+     "q": "audio/d7/23-q.mp3",
+     "a": "audio/d7/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "Compare full, incremental, and differential backups for restore effort.",
+     "back": "Full copies everything, so restores need only one set but backups are slow. Incremental saves changes since the last backup of any type, requiring the full plus every incremental to restore. Differential saves changes since the last full, needing only the full plus the latest differential.",
+     "q": "audio/d7/24-q.mp3",
+     "a": "audio/d7/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "Backup vs archive: what is the key difference?",
+     "back": "Backups exist for fast recovery of operational data to keep the business running. Archives hold historical data no longer in daily use that must be retained, mainly to satisfy compliance and retention requirements.",
+     "q": "audio/d7/25-q.mp3",
+     "a": "audio/d7/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "Differentiate SLA, SLO, and SLI.",
+     "back": "An SLA is the signed contract defining supplier commitments, reporting, and penalties. An SLO is the acceptable performance value or range, such as 99.9% uptime. An SLI is the quantitative measurement used to check whether SLA commitments are actually met.",
+     "q": "audio/d7/26-q.mp3",
+     "a": "audio/d7/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "Who grants an Authorization to Operate (ATO) and what does it signify?",
+     "back": "A senior authorizing official grants the ATO for a defined period, formally accepting residual risk after controls are selected, implemented, assessed, and monitored. The only two possible decisions are authorization or denial of authorization to operate.",
+     "q": "audio/d7/27-q.mp3",
+     "a": "audio/d7/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "What is a baseline configuration in SecCM?",
+     "back": "A formally reviewed and accepted set of configuration items that becomes the reference for builds, releases, and production conformance. Any change to it must go through change control, and old baselines are archived so a rollback is possible.",
+     "q": "audio/d7/28-q.mp3",
+     "a": "audio/d7/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "Continuous delivery vs continuous deployment: what is the difference?",
+     "back": "Both automate the pipeline after continuous integration, but in continuous delivery the final push to production is a manual decision. In continuous deployment every change that passes all pipeline stages goes to production automatically with no human step.",
+     "q": "audio/d7/29-q.mp3",
+     "a": "audio/d7/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "How does incident management differ from problem management?",
+     "back": "Incident management aims to restore service as fast as possible, treating the symptom. Problem management digs into the underlying root cause, often using structured root cause analysis such as the Five Whys, to prevent recurrence.",
+     "q": "audio/d7/30-q.mp3",
+     "a": "audio/d7/30-a.mp3"
+    },
+    {
+     "n": 31,
+     "front": "Name the four phases of the digital forensic process in order.",
+     "back": "Collection (identify, label, and acquire data while preserving integrity, capturing volatile data quickly), Examination (process the data to extract items of interest), Analysis (derive answers using legally defensible methods), and Reporting (document results and recommendations).",
+     "q": "audio/d7/31-q.mp3",
+     "a": "audio/d7/31-a.mp3"
     }
    ]
   },
@@ -1371,6 +1931,90 @@
      "back": "Knowing how to migrate off before you need to: data export, escrow, and alternative components identified in advance.",
      "q": "audio/d8/18-q.mp3",
      "a": "audio/d8/18-a.mp3"
+    },
+    {
+     "n": 19,
+     "front": "What baseline data fields belong in every SBOM entry?",
+     "back": "Supplier name, the component's name and version, unique identifiers, dependency relationships (which component sits inside which software), plus the SBOM author's details and a creation timestamp. These fields should map to license and vulnerability databases.",
+     "q": "audio/d8/19-q.mp3",
+     "a": "audio/d8/19-a.mp3"
+    },
+    {
+     "n": 20,
+     "front": "Name three machine-readable SBOM formats that support automation and sharing.",
+     "back": "SPDX (Software Package Data eXchange), CycloneDX, and SWID (Software Identification) tags. Machine-readable, standardized formats let SBOMs be generated automatically and exchanged at enterprise scale.",
+     "q": "audio/d8/20-q.mp3",
+     "a": "audio/d8/20-a.mp3"
+    },
+    {
+     "n": 21,
+     "front": "What is C-SCRM and what does an effective program achieve?",
+     "back": "Cybersecurity Supply-Chain Risk Management handles cyber risks arising across supply chain stages from software and services. Done well, it improves detection, response, and recovery from supplier defects and maps supplier components to critical business assets.",
+     "q": "audio/d8/21-q.mp3",
+     "a": "audio/d8/21-a.mp3"
+    },
+    {
+     "n": 22,
+     "front": "What are the four steps of the NIST risk management process applied to the supply chain?",
+     "back": "Frame (set the context for risk decisions), Assess, Respond, and Monitor. The steps are iterative and not strictly sequential, with ongoing communication feeding continuous improvement.",
+     "q": "audio/d8/22-q.mp3",
+     "a": "audio/d8/22-a.mp3"
+    },
+    {
+     "n": 23,
+     "front": "How does formally accepting a risk differ from ignoring it?",
+     "back": "Acceptance is a documented, deliberate decision to proceed without mitigation because the risk falls within tolerance. Ignoring a risk means no assessment, tracking, or documented decision, which amounts to negligence and is never acceptable.",
+     "q": "audio/d8/23-q.mp3",
+     "a": "audio/d8/23-a.mp3"
+    },
+    {
+     "n": 24,
+     "front": "What is the purpose of the OWASP Software Component Verification Standard (SCVS)?",
+     "back": "SCVS gives a common taxonomy of activities, controls, and best practices for reducing supply chain risk, and a standardized way to judge the transparency a supplier provides. Its tiered controls can qualify or score suppliers during procurement.",
+     "q": "audio/d8/24-q.mp3",
+     "a": "audio/d8/24-a.mp3"
+    },
+    {
+     "n": 25,
+     "front": "Rank common supplier validation methods from least to most rigorous.",
+     "back": "Self-attestation, then site visits, then independent third-party assessments and certifications. The rigor chosen should match how critical the acquired software is to the buying organization, and reassessment should be periodic.",
+     "q": "audio/d8/25-q.mp3",
+     "a": "audio/d8/25-a.mp3"
+    },
+    {
+     "n": 26,
+     "front": "Distinguish strategic, commodity, and tactical suppliers.",
+     "back": "Strategic suppliers are mission critical and hard to replace; commodity suppliers provide easily substituted goods from many sources; tactical suppliers fill gaps left by the other two when unforeseen issues or incidents emerge. Categorization drives how closely each is managed.",
+     "q": "audio/d8/26-q.mp3",
+     "a": "audio/d8/26-a.mp3"
+    },
+    {
+     "n": 27,
+     "front": "What does a right-to-audit clause actually obligate, and who should get one?",
+     "back": "It only reserves the option to audit the vendor; it does not require an audit to occur. It should not be limited to high-risk vendors, since a low-risk relationship can become high-risk as the services a vendor provides change.",
+     "q": "audio/d8/27-q.mp3",
+     "a": "audio/d8/27-a.mp3"
+    },
+    {
+     "n": 28,
+     "front": "Differentiate SLA, SLO, and SLR.",
+     "back": "An SLA is the binding commitment between provider and customer covering service, performance, reporting, and penalties. SLOs are specific promised metrics inside the SLA, like uptime or response time. The SLR document states the service requirements from the client's viewpoint and feeds the SLA.",
+     "q": "audio/d8/28-q.mp3",
+     "a": "audio/d8/28-a.mp3"
+    },
+    {
+     "n": 29,
+     "front": "Name the four categories of software maintenance activity.",
+     "back": "Corrective (bug fixing and troubleshooting), adaptive (updating software to stay relevant to its environment), perfective (keeping the system working well long term), and preventive (heading off future bugs and glitches).",
+     "q": "audio/d8/29-q.mp3",
+     "a": "audio/d8/29-a.mp3"
+    },
+    {
+     "n": 30,
+     "front": "What does the OWASP Secure Software Contract Annex do?",
+     "back": "It frames negotiation points between software buyers and suppliers by spelling out each party's security-related rights and obligations. Its sections cover life cycle activities, security requirements, the development environment, libraries and products, security reviews, and issue management.",
+     "q": "audio/d8/30-q.mp3",
+     "a": "audio/d8/30-a.mp3"
     }
    ]
   }
